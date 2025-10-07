@@ -1,0 +1,142 @@
+import React from 'react';
+import { cn } from "@/lib/utils";
+import { motion } from 'framer-motion';
+import { ScrollVelocity } from './ScrollVelocity';
+
+
+// Prop types for the HeroSection component
+interface HeroSectionProps extends React.HTMLAttributes<HTMLDivElement> {
+  logo?: {
+    url: string;
+    alt: string;
+    text?: string;
+  };
+  slogan?: string;
+  title: React.ReactNode;
+  subtitle: string;
+  callToAction: {
+    text: string;
+    href: string;
+  };
+  backgroundImages: string[];
+  scrollingText?: React.ReactNode;
+}
+
+const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
+  ({ className, logo, slogan, title, subtitle, callToAction, backgroundImages, scrollingText, ...props }, ref) => {
+
+    const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+
+    // Auto-advance images every 5 seconds
+    React.useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }, [backgroundImages.length]);
+
+    // Animation variants for the container to orchestrate children animations
+    const containerVariants = {
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.15,
+          delayChildren: 0.2,
+        },
+      },
+    };
+
+    // Animation variants for individual text/UI elements
+    const itemVariants = {
+      hidden: { y: 20, opacity: 0 },
+      visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+          duration: 0.5,
+          ease: "easeOut",
+        },
+      },
+    };
+
+    return (
+      <motion.section
+        ref={ref}
+        className={cn(
+          "relative flex w-full flex-col overflow-hidden bg-background text-foreground md:flex-row",
+          className
+        )}
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        {...props}
+      >
+        {/* Left Side: Content */}
+        <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 lg:w-3/5 lg:p-16">
+            {/* Top Section: Logo & Main Content */}
+            <div>
+                <motion.header className="mb-4" variants={itemVariants}>
+                    {logo && (
+                        <div>
+                            <img src={logo.url} alt={logo.alt} className="h-16 md:h-20 brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
+                        </div>
+                    )}
+                </motion.header>
+
+                <motion.main variants={containerVariants}>
+                    <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
+                        {title}
+                    </motion.h1>
+                    <motion.div className="my-6 h-1 w-20 bg-emerald-700" variants={itemVariants}></motion.div>
+                    <motion.p className="mb-8 max-w-md text-base text-black" variants={itemVariants}>
+                        {subtitle}
+                    </motion.p>
+                    <motion.a href={callToAction.href} className="text-lg font-bold tracking-widest text-emerald-700 transition-colors hover:text-emerald-600" variants={itemVariants}>
+                        {callToAction.text}
+                    </motion.a>
+                </motion.main>
+            </div>
+
+            {/* Bottom Section: Scrolling Text */}
+            {scrollingText && (
+                <motion.footer className="mt-12 w-full" variants={itemVariants}>
+                    {scrollingText}
+                </motion.footer>
+            )}
+        </div>
+
+        {/* Right Side: Image Slider with Clip Path Animation */}
+        <div className="relative w-full min-h-[300px] md:w-1/2 md:min-h-full lg:w-2/5 overflow-hidden">
+          {backgroundImages.map((image, index) => (
+            <motion.div
+              key={image}
+              className="absolute inset-0 w-full h-full bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${image})`,
+              }}
+              initial={{
+                clipPath: index === 0 ? 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' : 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)',
+                x: index === 0 ? 0 : '100%'
+              }}
+              animate={{
+                clipPath: currentImageIndex === index ? 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' : 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)',
+                x: currentImageIndex === index ? 0 : currentImageIndex > index ? '-100%' : '100%',
+                opacity: currentImageIndex === index ? 1 : 0
+              }}
+              transition={{
+                clipPath: { duration: 1.2, ease: "circOut" },
+                x: { duration: 0.8, ease: "easeInOut" },
+                opacity: { duration: 0.5 }
+              }}
+            />
+          ))}
+        </div>
+      </motion.section>
+    );
+  }
+);
+
+HeroSection.displayName = "HeroSection";
+
+export { HeroSection };
