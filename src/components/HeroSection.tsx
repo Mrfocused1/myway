@@ -1,11 +1,9 @@
 import React from 'react';
 import { cn } from "@/lib/utils";
 import { motion } from 'framer-motion';
-import { ScrollVelocity } from './ScrollVelocity';
-
 
 // Prop types for the HeroSection component
-interface HeroSectionProps extends React.HTMLAttributes<HTMLDivElement> {
+interface HeroSectionProps {
   logo?: {
     url: string;
     alt: string;
@@ -20,10 +18,11 @@ interface HeroSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   };
   backgroundImages: string[];
   scrollingText?: React.ReactNode;
+  className?: string;
 }
 
 const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
-  ({ className, logo, slogan, title, subtitle, callToAction, backgroundImages, scrollingText, ...props }, ref) => {
+  ({ className, logo, title, subtitle, callToAction, backgroundImages, scrollingText }, ref) => {
 
     const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
 
@@ -70,7 +69,6 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        {...props}
       >
         {/* Left Side: Content */}
         <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 lg:w-3/5 lg:p-16">

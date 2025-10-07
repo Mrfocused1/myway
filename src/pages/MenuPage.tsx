@@ -73,13 +73,13 @@ export function MenuPage() {
     return grouped;
   }, [selectedCategory, selectedCuisine, searchQuery]);
 
-  // Calculate total items
-  const totalItems = useMemo(() => {
-    return Object.values(groupedItems).reduce((sum, cuisineCategories) => {
-      const cuisineTotal = Object.values(cuisineCategories).reduce((catSum, items) => catSum + items.length, 0);
-      return sum + cuisineTotal;
-    }, 0);
-  }, [groupedItems]);
+  // Calculate total items (unused but kept for future features)
+  // const totalItems = useMemo(() => {
+  //   return Object.values(groupedItems).reduce((sum, cuisineCategories) => {
+  //     const cuisineTotal = Object.values(cuisineCategories).reduce((catSum, items) => catSum + items.length, 0);
+  //     return sum + cuisineTotal;
+  //   }, 0);
+  // }, [groupedItems]);
 
   return (
     <div className="min-h-screen bg-background">
