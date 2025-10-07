@@ -65,22 +65,9 @@ export function AboutPage() {
           <div className="mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">We Take Pride in Catering</h2>
             <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
-            <div className="space-y-4 text-lg text-foreground/90 leading-relaxed">
+            <div className="text-lg text-foreground/90 leading-relaxed">
               <p>
-                Welcome to Myway Catering, where exceptional culinary experiences meet personalised service. We take pride in
-                crafting delicious meals tailored to your unique events.
-              </p>
-              <p>
-                At Myway Catering, we believe that every event deserves a unique and unforgettable experience. With our custom
-                catering service, I work closely with clients to create menus that reflect their tastes and preferences, ensuring
-                each dish is a perfect fit for the occasion. Whether it's an intimate gathering or a grand celebration, I'm
-                dedicated to bringing your vision to life with exquisite flavors and impeccable presentation.
-              </p>
-              <p>
-                Experience the essence of Africa through our catering service specializing in authentic cuisine. We offer a
-                diverse menu that highlights the unique spices, fresh ingredients, and time-honored recipes that have been
-                passed down through generations. Whether for a special event or an intimate gathering, allow us to bring the
-                warmth and richness of African culinary traditions to your table.
+                Welcome to Myway Catering, where exceptional culinary experiences meet personalized service. We specialize in authentic Nigerian, Caribbean, and European cuisine, crafting delicious meals tailored to your unique events. From intimate gatherings to grand celebrations, we work closely with clients to create menus that reflect their tastes and preferences, bringing your vision to life with exquisite flavors and impeccable presentation.
               </p>
             </div>
           </div>
