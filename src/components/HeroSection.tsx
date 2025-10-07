@@ -87,7 +87,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                         {title}
                     </motion.h1>
                     <motion.div className="my-6 h-1 w-20 bg-emerald-700" variants={itemVariants}></motion.div>
-                    <motion.p className="mb-8 max-w-md text-base text-black" variants={itemVariants}>
+                    <motion.p className="mb-8 max-w-md text-base text-black hidden md:block" variants={itemVariants}>
                         {subtitle}
                     </motion.p>
                     <motion.a href={callToAction.href} className="text-lg font-bold tracking-widest text-emerald-700 transition-colors hover:text-emerald-600" variants={itemVariants}>
