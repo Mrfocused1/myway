@@ -15,7 +15,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
       <nav
         ref={ref}
         className={cn(
-          "fixed md:absolute top-0 left-0 right-0 z-50 px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8",
+          "fixed top-0 left-0 right-0 z-50 px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8",
           className
         )}
         {...props}
