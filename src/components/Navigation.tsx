@@ -23,11 +23,12 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         {/* Desktop Menu */}
         <div className="hidden md:flex justify-between items-center gap-8">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0 mr-4 hover:opacity-90 transition-opacity">
-            <div className="flex flex-col leading-tight">
-              <span className="text-2xl font-bold text-emerald-700 tracking-wide">MYWAY</span>
-              <span className="text-sm font-semibold text-emerald-600 tracking-wider">CATERING</span>
-            </div>
+          <Link to="/" className="flex-shrink-0 mr-4">
+            <img
+              src="/myway-logo.svg"
+              alt="MYWAY CATERING Logo"
+              className="h-20 w-auto max-w-[300px] object-contain pb-[15px] transition-transform hover:scale-105"
+            />
           </Link>
 
           {/* Navigation Items */}
@@ -59,11 +60,12 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         {/* Mobile Menu */}
         <div className="md:hidden flex justify-between items-center gap-4">
           {/* Mobile Logo */}
-          <Link to="/" className="flex-shrink-0 hover:opacity-90 transition-opacity">
-            <div className="flex flex-col leading-tight">
-              <span className="text-xl font-bold text-emerald-700 tracking-wide">MYWAY</span>
-              <span className="text-xs font-semibold text-emerald-600 tracking-wider">CATERING</span>
-            </div>
+          <Link to="/" className="flex-shrink-0">
+            <img
+              src="/myway-logo.svg"
+              alt="MYWAY CATERING Logo"
+              className="h-16 w-auto max-w-[200px] object-contain pb-[15px]"
+            />
           </Link>
 
           {/* Mobile Menu Button */}
