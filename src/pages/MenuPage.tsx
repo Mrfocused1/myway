@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-import { allMenuItems, MenuItem } from '../data/menuItems';
+import { supabase, MenuItemDB } from '../lib/supabase';
 
 const categories = ["All", "Starters", "Soups & Stews", "Rice Dishes", "Proteins", "Swallow & Sides", "Specials"];
 const cuisines = ["All", "Nigerian", "Caribbean", "European"];
@@ -11,9 +11,33 @@ export function MenuPage() {
   const [selectedCuisine, setSelectedCuisine] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [menuItems, setMenuItems] = useState<MenuItemDB[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch menu items from Supabase
+  useEffect(() => {
+    const fetchMenuItems = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('menu_items')
+        .select('*')
+        .order('cuisine')
+        .order('category')
+        .order('name');
+
+      if (error) {
+        console.error('Error fetching menu items:', error);
+      } else {
+        setMenuItems(data || []);
+      }
+      setLoading(false);
+    };
+
+    fetchMenuItems();
+  }, []);
 
   // Show/hide scroll to top button based on scroll position
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
     };
@@ -37,7 +61,7 @@ export function MenuPage() {
 
   // Group items by cuisine first, then by category
   const groupedItems = useMemo(() => {
-    let items = allMenuItems;
+    let items = menuItems;
 
     // Filter by search query first
     if (searchQuery.trim()) {
@@ -58,7 +82,7 @@ export function MenuPage() {
     }
 
     // Group by cuisine first, then by category within each cuisine
-    const grouped: { [cuisine: string]: { [category: string]: MenuItem[] } } = {};
+    const grouped: { [cuisine: string]: { [category: string]: MenuItemDB[] } } = {};
 
     items.forEach(item => {
       if (!grouped[item.cuisine]) {
@@ -71,7 +95,7 @@ export function MenuPage() {
     });
 
     return grouped;
-  }, [selectedCategory, selectedCuisine, searchQuery]);
+  }, [selectedCategory, selectedCuisine, searchQuery, menuItems]);
 
   // Calculate total items (unused but kept for future features)
   // const totalItems = useMemo(() => {
@@ -178,8 +202,13 @@ export function MenuPage() {
       {/* Directory-Style Menu Items */}
       <section className="py-16 px-8">
         <div className="container mx-auto max-w-6xl">
-          {/* Menu Items grouped by Cuisine, then Category */}
-          {Object.keys(groupedItems).length > 0 ? (
+          {/* Loading State */}
+          {loading ? (
+            <div className="text-center py-12">
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-700"></div>
+              <p className="mt-4 text-foreground">Loading menu items...</p>
+            </div>
+          ) : Object.keys(groupedItems).length > 0 ? (
             <div className="space-y-20">
               {/* Loop through each cuisine type */}
               {cuisines
@@ -208,7 +237,7 @@ export function MenuPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                               {groupedItems[cuisine][category].map((item) => (
                                 <div
-                                  key={`${item.cuisine}-${item.category}-${item.name}`}
+                                  key={item.id}
                                   className="group p-6 rounded-lg border border-border bg-background hover:bg-secondary/50 transition-colors"
                                 >
                                   {/* Item Header */}
@@ -232,15 +261,15 @@ export function MenuPage() {
                                     )}
 
                                     {/* May Contain */}
-                                    {item.mayContain.length > 0 && (
+                                    {item.may_contain.length > 0 && (
                                       <div>
                                         <h5 className="font-bold text-foreground mb-1">May Contain</h5>
-                                        <p className="text-foreground/80">{item.mayContain.join(", ")}</p>
+                                        <p className="text-foreground/80">{item.may_contain.join(", ")}</p>
                                       </div>
                                     )}
 
                                     {/* No Allergens Message */}
-                                    {item.allergens.length === 0 && item.mayContain.length === 0 && (
+                                    {item.allergens.length === 0 && item.may_contain.length === 0 && (
                                       <p className="text-muted-foreground italic">No known allergens</p>
                                     )}
                                   </div>
@@ -255,7 +284,7 @@ export function MenuPage() {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-muted-foreground">No items found matching your search.</p>
+              <p className="text-muted-foreground">No menu items found. Please check back later.</p>
             </div>
           )}
         </div>
