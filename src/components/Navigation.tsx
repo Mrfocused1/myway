@@ -22,15 +22,6 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
       >
         {/* Desktop Menu */}
         <div className="hidden md:flex justify-center items-center gap-8 relative">
-          {/* Logo */}
-          <Link to="/" className="absolute left-0 top-4 flex-shrink-0">
-            <img
-              src="/myway-logo.svg"
-              alt="MYWAY CATERING Logo"
-              className="h-40 w-auto max-w-[600px] object-contain pb-[15px] transition-transform hover:scale-105"
-            />
-          </Link>
-
           {/* Navigation Items - Centered */}
           <div className="rounded-full bg-emerald-700 backdrop-blur-sm px-10 py-4 shadow-lg border border-emerald-600">
             <ul className="flex items-center gap-8">
