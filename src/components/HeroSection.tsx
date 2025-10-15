@@ -77,7 +77,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                 <motion.header className="mb-4" variants={itemVariants}>
                     {logo && (
                         <div>
-                            <img src={logo.url} alt={logo.alt} className="h-16 md:h-20 brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
+                            <img src={logo.url} alt={logo.alt} className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
                         </div>
                     )}
                 </motion.header>
