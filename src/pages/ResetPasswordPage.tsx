@@ -13,14 +13,39 @@ export function ResetPasswordPage() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // Check if we have a valid session (from the reset link)
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    // Listen for auth state changes to handle the password reset token
+    const { data: authListener } = supabase.auth.onAuthStateChange(async (event, session) => {
+      console.log('Auth event:', event, 'Session:', session)
+
+      if (event === 'PASSWORD_RECOVERY') {
+        setValidToken(true)
+      } else if (session) {
+        setValidToken(true)
+      }
+    })
+
+    // Also check for existing session
+    const checkSession = async () => {
+      const { data: { session }, error: sessionError } = await supabase.auth.getSession()
+      console.log('Current session:', session, 'Error:', sessionError)
+
       if (session) {
         setValidToken(true)
       } else {
-        setError('Invalid or expired reset link. Please request a new one.')
+        // Wait a bit for the auth state change event to fire
+        setTimeout(() => {
+          if (!validToken) {
+            setError('Invalid or expired reset link. Please request a new one.')
+          }
+        }, 2000)
       }
-    })
+    }
+
+    checkSession()
+
+    return () => {
+      authListener.subscription.unsubscribe()
+    }
   }, [])
 
   const handleSubmit = async (e: FormEvent) => {
