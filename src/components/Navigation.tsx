@@ -15,15 +15,15 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
       <nav
         ref={ref}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8",
+          "fixed md:absolute top-0 left-0 right-0 z-50 px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8",
           className
         )}
         {...props}
       >
         {/* Desktop Menu */}
-        <div className="hidden md:flex justify-between items-center gap-8">
+        <div className="hidden md:flex justify-center items-center gap-8 relative">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0 mr-4">
+          <Link to="/" className="absolute left-0 flex-shrink-0">
             <img
               src="/myway-logo.svg"
               alt="MYWAY CATERING Logo"
@@ -31,7 +31,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
             />
           </Link>
 
-          {/* Navigation Items */}
+          {/* Navigation Items - Centered */}
           <div className="rounded-full bg-emerald-700 backdrop-blur-sm px-10 py-4 shadow-lg border border-emerald-600">
             <ul className="flex items-center gap-8">
               {items.map((item) => (
