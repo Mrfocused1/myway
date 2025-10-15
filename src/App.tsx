@@ -57,7 +57,7 @@ function App() {
               <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
               <span key="item2">Corporate Events • Weddings • Private Celebrations</span>,
               <span key="item3">Fresh Ingredients • Authentic Recipes • Professional Service</span>,
-              <span key="item4">+1 (555) 555-1234 • events@mywaycatering.com</span>,
+              <span key="item4">+44 7196 103 2314 • mariam@mywaycatering.com</span>,
             ]}
           </ScrollVelocity>
         }

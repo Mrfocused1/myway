@@ -374,7 +374,7 @@ export function AboutPage() {
               View Our Menu
             </a>
             <a
-              href="tel:+15555551234"
+              href="tel:+4471961032314"
               className="inline-block bg-emerald-700 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-emerald-600 transition-all hover:scale-105"
             >
               Call Us Now

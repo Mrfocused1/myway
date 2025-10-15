@@ -49,13 +49,13 @@ export function Footer() {
             <h4 className="text-lg font-bold mb-4 uppercase">Contact Us</h4>
             <ul className="space-y-3 text-white/70">
               <li>
-                <a href="tel:+15555551234" className="hover:text-white transition-colors">
-                  +1 (555) 555-1234
+                <a href="tel:+4471961032314" className="hover:text-white transition-colors">
+                  +44 7196 103 2314
                 </a>
               </li>
               <li>
-                <a href="mailto:events@mywaycatering.com" className="hover:text-white transition-colors">
-                  events@mywaycatering.com
+                <a href="mailto:mariam@mywaycatering.com" className="hover:text-white transition-colors">
+                  mariam@mywaycatering.com
                 </a>
               </li>
             </ul>
