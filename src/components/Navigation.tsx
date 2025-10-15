@@ -15,19 +15,19 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
       <nav
         ref={ref}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 p-6",
+          "fixed top-0 left-0 right-0 z-50 px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6",
           className
         )}
         {...props}
       >
         {/* Desktop Menu */}
-        <div className="hidden md:flex justify-between items-center">
+        <div className="hidden md:flex justify-between items-center gap-8">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0 mr-4">
             <img
               src="/myway-logo.svg"
               alt="MYWAY CATERING Logo"
-              className="h-20 w-auto object-contain"
+              className="h-16 w-auto object-contain transition-transform hover:scale-105"
             />
           </Link>
 
@@ -58,13 +58,13 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         </div>
 
         {/* Mobile Menu */}
-        <div className="md:hidden flex justify-between items-center">
+        <div className="md:hidden flex justify-between items-center gap-4">
           {/* Mobile Logo */}
           <Link to="/" className="flex-shrink-0">
             <img
               src="/myway-logo.svg"
               alt="MYWAY CATERING Logo"
-              className="h-12 w-auto object-contain"
+              className="h-14 w-auto object-contain"
             />
           </Link>
 
@@ -96,7 +96,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="md:hidden absolute top-20 left-6 right-6 rounded-2xl bg-background/95 backdrop-blur-sm shadow-xl border border-border/50 overflow-hidden"
+              className="md:hidden absolute top-24 left-4 right-4 rounded-2xl bg-background/95 backdrop-blur-sm shadow-xl border border-border/50 overflow-hidden"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
