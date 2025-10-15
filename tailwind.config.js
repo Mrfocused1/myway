@@ -38,8 +38,9 @@ export default {
           dark: '#F5EFE7',       // Darker cream
         },
         'earthy-brown': {
-          DEFAULT: '#8B7355',    // Earthy brown
-          dark: '#6F4E37',       // Coffee brown
+          DEFAULT: '#5D4E37',    // Dark earthy brown
+          dark: '#3E2F23',       // Very dark brown
+          light: '#8B7355',      // Light brown
         },
       },
       maxWidth: {

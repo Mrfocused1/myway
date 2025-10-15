@@ -73,7 +73,7 @@ function App() {
       <AccordionSection />
 
       {/* Section 4: Feature Cards */}
-      <section className="py-20 px-8 pb-10 bg-background">
+      <section className="py-20 px-8 pb-10 bg-earthy-cream">
         <div className="container mx-auto max-w-7xl">
           {/* Section Header */}
           <motion.div
@@ -83,11 +83,11 @@ function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-earthy-brown-dark mb-4">
               Our Services
             </h2>
             <div className="h-1 w-20 bg-earthy-green mx-auto mb-6"></div>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-earthy-brown max-w-3xl mx-auto">
               Tailored catering solutions for every occasion, from corporate functions to intimate celebrations
             </p>
           </motion.div>
@@ -146,7 +146,7 @@ function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-lg text-earthy-brown mb-6">
               Not sure which service is right for you?
             </p>
             <a
@@ -462,10 +462,10 @@ function App() {
         <div className="absolute bottom-0 left-0 right-0 h-16 -mb-16 overflow-hidden">
           <svg className="w-full h-full" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,0 L0,50 Q50,70 100,45 T200,50 Q250,75 300,50 T400,55 Q450,78 500,50 T600,52 Q650,74 700,50 T800,53 Q850,80 900,50 T1000,51 Q1050,76 1100,50 T1200,50 L1200,0 Z"
-                  fill="#8B7355"
+                  fill="#5D4E37"
                   opacity="1"/>
             <path d="M0,0 L0,40 Q60,65 120,35 T240,40 Q300,60 360,40 T480,42 Q540,62 600,35 T720,38 Q780,58 840,35 T960,37 Q1020,60 1080,35 T1200,35 L1200,0 Z"
-                  fill="#8B7355"
+                  fill="#5D4E37"
                   opacity="0.8"/>
           </svg>
         </div>
