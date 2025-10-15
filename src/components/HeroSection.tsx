@@ -82,7 +82,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                     )}
                 </motion.header>
 
-                <motion.main variants={containerVariants} className="md:-mt-[240px]">
+                <motion.main variants={containerVariants} className="md:-mt-[120px]">
                     <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
                         {title}
                     </motion.h1>
