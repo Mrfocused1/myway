@@ -71,7 +71,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         variants={containerVariants}
       >
         {/* Left Side: Content */}
-        <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 lg:w-3/5 lg:p-16">
+        <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 lg:w-3/5 lg:p-16 -mt-[15px] md:mt-0">
             {/* Top Section: Logo & Main Content */}
             <div>
                 <motion.header className="mb-4" variants={itemVariants}>
@@ -105,11 +105,11 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         </div>
 
         {/* Right Side: Image Slider with Clip Path Animation */}
-        <div className="relative w-full min-h-[300px] md:w-1/2 md:min-h-full lg:w-2/5 overflow-hidden">
+        <div className="absolute right-0 bottom-0 w-[280px] h-[300px] md:relative md:w-1/2 md:h-auto md:min-h-full lg:w-2/5 overflow-hidden">
           {backgroundImages.map((image, index) => (
             <motion.div
               key={image}
-              className="absolute inset-0 w-full h-full bg-cover bg-center"
+              className="absolute inset-0 w-full h-full bg-cover bg-right md:bg-center"
               style={{
                 backgroundImage: `url(${image})`,
               }}
@@ -118,7 +118,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                 x: index === 0 ? 0 : '100%'
               }}
               animate={{
-                clipPath: currentImageIndex === index ? 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' : 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)',
+                clipPath: currentImageIndex === index ? 'polygon(0% 0, 100% 0, 100% 100%, 0% 100%)' : 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)',
                 x: currentImageIndex === index ? 0 : currentImageIndex > index ? '-100%' : '100%',
                 opacity: currentImageIndex === index ? 1 : 0
               }}
