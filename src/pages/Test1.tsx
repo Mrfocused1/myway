@@ -86,18 +86,16 @@ function Test1() {
                 </div>
             </div>
 
-            {scrollingText && (
-                <motion.footer className="mt-12 w-full px-8 md:px-0 md:mt-0 md:pb-8 md:px-12 lg:px-16" variants={itemVariants}>
-                    <ScrollVelocity velocity={2} className="text-xs">
-                        {[
-                            <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
-                            <span key="item2">Corporate Events • Weddings • Private Celebrations</span>,
-                            <span key="item3">Fresh Ingredients • Authentic Recipes • Professional Service</span>,
-                            <span key="item4">+44 7196 103 2314 • mariam@mywaycatering.com</span>,
-                        ]}
-                    </ScrollVelocity>
-                </motion.footer>
-            )}
+            <motion.footer className="mt-12 w-full px-8 md:px-0 md:mt-0 md:pb-8 md:px-12 lg:px-16" variants={itemVariants}>
+                <ScrollVelocity velocity={2} className="text-xs">
+                    {[
+                        <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
+                        <span key="item2">Corporate Events • Weddings • Private Celebrations</span>,
+                        <span key="item3">Fresh Ingredients • Authentic Recipes • Professional Service</span>,
+                        <span key="item4">+44 7196 103 2314 • mariam@mywaycatering.com</span>,
+                    ]}
+                </ScrollVelocity>
+            </motion.footer>
         </div>
 
         {/* Image slider - no negative margin */}
