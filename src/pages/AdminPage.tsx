@@ -464,6 +464,7 @@ export function AdminPage() {
           </div>
         )}
       </AnimatePresence>
+          </>
         )}
       </div>
     </div>
