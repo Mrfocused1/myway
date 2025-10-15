@@ -25,6 +25,18 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
   ({ className, logo, title, subtitle, callToAction, backgroundImages, scrollingText }, ref) => {
 
     const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    // Check if mobile view
+    React.useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth < 768);
+      };
+
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+      return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     // Auto-advance images every 5 seconds
     React.useEffect(() => {
@@ -107,7 +119,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         </div>
 
         {/* Right Side: Image Slider - Mobile: full width no negative margin | Desktop: absolute positioned */}
-        <div className="relative w-full min-h-[300px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[700px] lg:w-2/5 overflow-hidden">
+        <div className="relative w-full h-[400px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[700px] lg:w-2/5 overflow-hidden">
           {backgroundImages.map((image, index) => (
             <motion.div
               key={image}
@@ -116,11 +128,15 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                 backgroundImage: `url(${image})`,
               }}
               initial={{
-                clipPath: index === 0 ? 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' : 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)',
+                clipPath: index === 0
+                  ? (isMobile ? 'polygon(0% 0, 100% 0, 100% 100%, 0% 100%)' : 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)')
+                  : 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)',
                 x: index === 0 ? 0 : '100%'
               }}
               animate={{
-                clipPath: currentImageIndex === index ? 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' : 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)',
+                clipPath: currentImageIndex === index
+                  ? (isMobile ? 'polygon(0% 0, 100% 0, 100% 100%, 0% 100%)' : 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)')
+                  : (isMobile ? 'polygon(0% 0, 100% 0, 100% 100%, 0% 100%)' : 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)'),
                 x: currentImageIndex === index ? 0 : currentImageIndex > index ? '-100%' : '100%',
                 opacity: currentImageIndex === index ? 1 : 0
               }}
