@@ -35,7 +35,7 @@ function App() {
       />
       <HeroSection
         logo={{
-          url: "https://github.com/Mrfocused1/YouTube-directory/blob/main/mywaylogo-4.png?raw=true",
+          url: "/myway-logo.svg",
           alt: "MYWAY CATERING Logo",
         }}
         title={
@@ -48,7 +48,7 @@ function App() {
         subtitle="Welcome to Myway Catering, where exceptional culinary experiences meet personalised service. We take pride in crafting delicious meals tailored to your unique events."
         callToAction={{
           text: "REQUEST A QUOTE →",
-          href: "#contact",
+          href: "/about#contact",
         }}
         backgroundImages={[
           "https://github.com/Mrfocused1/YouTube-directory/blob/main/hero%20image%201.jpg?raw=true",

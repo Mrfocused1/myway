@@ -1,5 +1,19 @@
-import { supabase } from '../lib/supabase'
+import dotenv from 'dotenv'
+import { createClient } from '@supabase/supabase-js'
 import { allMenuItems } from '../data/menuItems'
+
+// Load environment variables from .env.local
+dotenv.config({ path: '.env.local' })
+
+const supabaseUrl = process.env.VITE_SUPABASE_URL
+const supabaseKey = process.env.VITE_SUPABASE_SERVICE_KEY // Use service_role key for migration
+
+if (!supabaseUrl || !supabaseKey) {
+  console.error('Missing Supabase credentials. Set VITE_SUPABASE_URL and VITE_SUPABASE_SERVICE_KEY')
+  process.exit(1)
+}
+
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 async function migrateMenuData() {
   console.log('Starting menu data migration...')

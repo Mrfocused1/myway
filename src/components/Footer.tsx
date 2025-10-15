@@ -7,7 +7,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">MYWAY CATERING</h3>
+            <img
+              src="/myway-logo.svg"
+              alt="MYWAY CATERING Logo"
+              className="h-20 mb-4 object-contain"
+            />
             <p className="text-white/70 mb-4 leading-relaxed">
               Where exceptional culinary experiences meet personalised service. We take pride in crafting delicious meals tailored to your unique events.
             </p>

@@ -165,21 +165,21 @@ export function AdminPage() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="bg-slate-800 text-white py-6 px-8 shadow-lg">
-        <div className="container mx-auto max-w-7xl flex justify-between items-center">
+        <div className="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
-            <h1 className="text-3xl font-bold">Menu Management</h1>
-            <p className="text-white/80 mt-1">Logged in as {user?.email}</p>
+            <h1 className="text-2xl md:text-3xl font-bold">Menu Management</h1>
+            <p className="text-white/80 mt-1 text-sm md:text-base">Logged in as {user?.email}</p>
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <button
               onClick={() => navigate('/')}
-              className="px-6 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
+              className="px-6 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors whitespace-nowrap text-center"
             >
               View Website
             </button>
             <button
               onClick={handleSignOut}
-              className="px-6 py-2 rounded-lg bg-red-600 hover:bg-red-700 transition-colors"
+              className="px-6 py-2 rounded-lg bg-red-600 hover:bg-red-700 transition-colors whitespace-nowrap text-center"
             >
               Sign Out
             </button>
