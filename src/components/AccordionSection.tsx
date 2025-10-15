@@ -61,7 +61,7 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: { item: any; isActive: 
 
 // --- Main Component ---
 export function AccordionSection() {
-  const [activeIndex, setActiveIndex] = useState(2);
+  const [activeIndex, setActiveIndex] = useState(1);
 
   const handleItemHover = (index: number) => {
     setActiveIndex(index);
