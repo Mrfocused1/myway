@@ -12,7 +12,7 @@ import { useState } from 'react'
 function App() {
   const [flippedCards, setFlippedCards] = useState<{[key: string]: boolean}>({
     nigerian: false,
-    caribbean: true,
+    caribbean: false,
     european: false
   });
 
