@@ -15,7 +15,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
       <nav
         ref={ref}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6",
+          "fixed top-0 left-0 right-0 z-50 px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8",
           className
         )}
         {...props}
@@ -23,16 +23,15 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         {/* Desktop Menu */}
         <div className="hidden md:flex justify-between items-center gap-8">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0 mr-4">
-            <img
-              src="/myway-logo.svg"
-              alt="MYWAY CATERING Logo"
-              className="h-16 w-auto object-contain transition-transform hover:scale-105"
-            />
+          <Link to="/" className="flex-shrink-0 mr-4 hover:opacity-90 transition-opacity">
+            <div className="flex flex-col leading-tight">
+              <span className="text-2xl font-bold text-emerald-700 tracking-wide">MYWAY</span>
+              <span className="text-sm font-semibold text-emerald-600 tracking-wider">CATERING</span>
+            </div>
           </Link>
 
           {/* Navigation Items */}
-          <div className="rounded-full bg-emerald-700 backdrop-blur-sm px-8 py-3 shadow-lg border border-emerald-600">
+          <div className="rounded-full bg-emerald-700 backdrop-blur-sm px-10 py-4 shadow-lg border border-emerald-600">
             <ul className="flex items-center gap-8">
               {items.map((item) => (
                 <li key={item.label}>
@@ -60,17 +59,16 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         {/* Mobile Menu */}
         <div className="md:hidden flex justify-between items-center gap-4">
           {/* Mobile Logo */}
-          <Link to="/" className="flex-shrink-0">
-            <img
-              src="/myway-logo.svg"
-              alt="MYWAY CATERING Logo"
-              className="h-14 w-auto object-contain"
-            />
+          <Link to="/" className="flex-shrink-0 hover:opacity-90 transition-opacity">
+            <div className="flex flex-col leading-tight">
+              <span className="text-xl font-bold text-emerald-700 tracking-wide">MYWAY</span>
+              <span className="text-xs font-semibold text-emerald-600 tracking-wider">CATERING</span>
+            </div>
           </Link>
 
           {/* Mobile Menu Button */}
           <button
-            className="rounded-full bg-emerald-700/80 backdrop-blur-sm p-3 shadow-lg border border-emerald-600/50"
+            className="rounded-full bg-emerald-700/80 backdrop-blur-sm p-4 shadow-lg border border-emerald-600/50"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -96,7 +94,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="md:hidden absolute top-24 left-4 right-4 rounded-2xl bg-background/95 backdrop-blur-sm shadow-xl border border-border/50 overflow-hidden"
+              className="md:hidden absolute top-28 left-4 right-4 rounded-2xl bg-background/95 backdrop-blur-sm shadow-xl border border-border/50 overflow-hidden"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -108,7 +106,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
                     {item.href.startsWith('#') ? (
                       <a
                         href={item.href}
-                        className="block px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:text-primary"
+                        className="block px-8 py-4 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:text-primary"
                         onClick={() => setIsOpen(false)}
                       >
                         {item.label}
@@ -116,7 +114,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
                     ) : (
                       <Link
                         to={item.href}
-                        className="block px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:text-primary"
+                        className="block px-8 py-4 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:text-primary"
                         onClick={() => setIsOpen(false)}
                       >
                         {item.label}
