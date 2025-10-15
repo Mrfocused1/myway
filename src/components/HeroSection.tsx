@@ -71,10 +71,10 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         variants={containerVariants}
       >
         {/* Left Side: Content */}
-        <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 md:pt-[63px] lg:w-3/5 lg:p-16 lg:pt-[79px]">
-            {/* Logo Container - Separate on Desktop */}
+        <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 md:pt-[63px] lg:w-3/5 lg:p-16 lg:pt-[79px] md:relative">
+            {/* Logo Container - Absolutely Positioned on Desktop */}
             {logo && (
-                <motion.div className="mb-4 md:-mt-[200px] lg:-mt-[220px]" variants={itemVariants}>
+                <motion.div className="mb-4 md:mb-0 md:absolute md:top-12 md:left-12 lg:top-16 lg:left-16" variants={itemVariants}>
                     <img src={logo.url} alt={logo.alt} className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
                 </motion.div>
             )}
