@@ -71,7 +71,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         variants={containerVariants}
       >
         {/* Left Side: Content */}
-        <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 lg:w-3/5 lg:p-16">
+        <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 md:pt-[63px] lg:w-3/5 lg:p-16 lg:pt-[79px]">
             {/* Top Section: Logo & Main Content */}
             <div>
                 <motion.header className="mb-4" variants={itemVariants}>
@@ -105,7 +105,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         </div>
 
         {/* Right Side: Image Slider with Clip Path Animation */}
-        <div className="relative w-full min-h-[300px] md:w-1/2 md:min-h-full lg:w-2/5 overflow-hidden">
+        <div className="relative w-full min-h-[300px] md:w-1/2 md:min-h-[600px] lg:w-2/5 lg:min-h-[700px] overflow-hidden">
           {backgroundImages.map((image, index) => (
             <motion.div
               key={image}
