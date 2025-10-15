@@ -74,9 +74,9 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         <div className="flex flex-col justify-between p-8 md:grid md:grid-cols-1 md:min-h-0 md:h-[700px] md:w-1/2 md:grid-rows-[auto_1fr_auto] md:p-0 lg:w-3/5">
             {/* Mobile: Logo & Content together | Desktop: Logo in Row 1 */}
             <div className="md:contents">
-                {/* Logo */}
+                {/* Logo - Hidden on mobile, shown on desktop */}
                 {logo && (
-                    <motion.div className="mb-4 md:mb-0 md:pt-8 md:px-12 lg:px-16" variants={itemVariants}>
+                    <motion.div className="hidden md:block md:pt-8 md:px-12 lg:px-16" variants={itemVariants}>
                         <img src={logo.url} alt={logo.alt} className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
                     </motion.div>
                 )}
