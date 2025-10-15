@@ -107,7 +107,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         </div>
 
         {/* Right Side: Image Slider with Clip Path Animation */}
-        <div className="relative w-full min-h-[300px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[700px] lg:w-2/5 overflow-hidden">
+        <div className="relative w-full min-h-[300px] -mx-8 md:mx-0 md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[700px] lg:w-2/5 overflow-hidden">
           {backgroundImages.map((image, index) => (
             <motion.div
               key={image}
