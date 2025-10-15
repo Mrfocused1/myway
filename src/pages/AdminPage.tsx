@@ -334,7 +334,6 @@ export function AdminPage() {
             </div>
           </div>
         )}
-      </div>
 
       {/* Add/Edit Modal */}
       <AnimatePresence>
