@@ -6,13 +6,13 @@ export function Footer() {
       <div className="container mx-auto px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Company Info */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <img
               src="/myway-logo-white.png"
               alt="MYWAY CATERING Logo"
               className="h-40 mb-4 object-contain"
             />
-            <p className="text-white/70 mb-4 leading-relaxed">
+            <p className="text-white/70 mb-4 leading-relaxed hidden md:block">
               Where exceptional culinary experiences meet personalised service. We take pride in crafting delicious meals tailored to your unique events.
             </p>
           </div>
