@@ -70,32 +70,35 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         animate="visible"
         variants={containerVariants}
       >
-        {/* Grid Container with 3 rows (mobile: flexbox, desktop: grid) */}
-        <div className="grid grid-cols-1 p-8 min-h-screen md:min-h-0 md:h-[700px] md:w-1/2 md:grid-rows-[auto_1fr_auto] md:p-0 lg:w-3/5">
-            {/* Logo at TOP - Row 1, with top padding to match menu on desktop */}
-            {logo && (
-                <motion.div className="mb-4 md:mb-0 md:pt-8 md:px-12 lg:px-16" variants={itemVariants}>
-                    <img src={logo.url} alt={logo.alt} className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
-                </motion.div>
-            )}
+        {/* Mobile: Flexbox with justify-between (Position A) | Desktop: Grid with 3 rows */}
+        <div className="flex flex-col justify-between p-8 md:grid md:grid-cols-1 md:min-h-0 md:h-[700px] md:w-1/2 md:grid-rows-[auto_1fr_auto] md:p-0 lg:w-3/5">
+            {/* Mobile: Logo & Content together | Desktop: Logo in Row 1 */}
+            <div className="md:contents">
+                {/* Logo */}
+                {logo && (
+                    <motion.div className="mb-4 md:mb-0 md:pt-8 md:px-12 lg:px-16" variants={itemVariants}>
+                        <img src={logo.url} alt={logo.alt} className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
+                    </motion.div>
+                )}
 
-            {/* Content in MIDDLE - Row 2, centered vertically on desktop */}
-            <div className="md:flex md:items-center md:px-12 lg:px-16">
-                <motion.main variants={containerVariants}>
-                    <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
-                        {title}
-                    </motion.h1>
-                    <motion.div className="my-6 h-1 w-20 bg-emerald-700" variants={itemVariants}></motion.div>
-                    <motion.p className="mb-8 max-w-md text-base text-black hidden md:block" variants={itemVariants}>
-                        {subtitle}
-                    </motion.p>
-                    <motion.a href={callToAction.href} className="text-lg font-bold tracking-widest text-emerald-700 transition-colors hover:text-emerald-600" variants={itemVariants}>
-                        {callToAction.text}
-                    </motion.a>
-                </motion.main>
+                {/* Content - Desktop: Row 2, centered vertically */}
+                <div className="md:flex md:items-center md:px-12 lg:px-16">
+                    <motion.main variants={containerVariants}>
+                        <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
+                            {title}
+                        </motion.h1>
+                        <motion.div className="my-6 h-1 w-20 bg-emerald-700" variants={itemVariants}></motion.div>
+                        <motion.p className="mb-8 max-w-md text-base text-black hidden md:block" variants={itemVariants}>
+                            {subtitle}
+                        </motion.p>
+                        <motion.a href={callToAction.href} className="text-lg font-bold tracking-widest text-emerald-700 transition-colors hover:text-emerald-600" variants={itemVariants}>
+                            {callToAction.text}
+                        </motion.a>
+                    </motion.main>
+                </div>
             </div>
 
-            {/* Scrolling text at BOTTOM - Row 3 */}
+            {/* Scrolling text - Mobile: pushed to bottom by justify-between | Desktop: Row 3 */}
             {scrollingText && (
                 <motion.footer className="mt-12 w-full md:mt-0 md:pb-8 md:px-12 lg:px-16" variants={itemVariants}>
                     {scrollingText}
