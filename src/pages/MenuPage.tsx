@@ -107,7 +107,7 @@ export function MenuPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation items={navItems} />
+      <Navigation items={navItems} useWhiteLogo />
 
       {/* Hero Section */}
       <section

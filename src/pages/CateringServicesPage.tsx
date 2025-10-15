@@ -89,7 +89,7 @@ export function CateringServicesPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation items={navItems} />
+      <Navigation items={navItems} useWhiteLogo />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-8 bg-earthy-brown text-white">

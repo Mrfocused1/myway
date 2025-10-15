@@ -5,10 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface NavigationProps extends React.HTMLAttributes<HTMLElement> {
   items: { label: string; href: string }[];
+  useWhiteLogo?: boolean;
 }
 
 const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
-  ({ className, items, ...props }, ref) => {
+  ({ className, items, useWhiteLogo = false, ...props }, ref) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -53,7 +54,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
           {/* Mobile Logo */}
           <Link to="/" className="flex-shrink-0">
             <img
-              src="/myway-logo.svg"
+              src={useWhiteLogo ? "/myway-logo-white.png" : "/myway-logo.svg"}
               alt="MYWAY CATERING Logo"
               className="h-32 w-auto max-w-[400px] object-contain pb-[15px]"
             />
