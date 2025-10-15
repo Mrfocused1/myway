@@ -8,7 +8,7 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <img
-              src="/myway-logo.svg"
+              src="/myway-logo-white.png"
               alt="MYWAY CATERING Logo"
               className="h-20 mb-4 object-contain"
             />
