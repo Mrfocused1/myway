@@ -22,9 +22,20 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         {...props}
       >
         {/* Desktop Menu */}
-        <div className="hidden md:flex justify-center items-center gap-8 relative">
-          {/* Navigation Items - Centered */}
-          <div className="rounded-full bg-earthy-green backdrop-blur-sm px-10 py-4 shadow-lg border border-earthy-green">
+        <div className="hidden md:flex justify-between items-center gap-8 relative">
+          {/* Desktop Logo - Only show on pages with white logo */}
+          {useWhiteLogo && (
+            <Link to="/" className="flex-shrink-0">
+              <img
+                src="/myway-logo-white.png"
+                alt="MYWAY CATERING Logo"
+                className="h-32 w-auto max-w-[400px] object-contain pb-[15px]"
+              />
+            </Link>
+          )}
+
+          {/* Navigation Items */}
+          <div className={`rounded-full bg-earthy-green backdrop-blur-sm px-10 py-4 shadow-lg border border-earthy-green ${useWhiteLogo ? '' : 'mx-auto'}`}>
             <ul className="flex items-center gap-8">
               {items.map((item) => (
                 <li key={item.label}>
@@ -47,6 +58,9 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
               ))}
             </ul>
           </div>
+
+          {/* Spacer for alignment when logo is shown */}
+          {useWhiteLogo && <div className="flex-shrink-0 w-32"></div>}
         </div>
 
         {/* Mobile Menu */}
