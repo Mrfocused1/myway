@@ -111,12 +111,12 @@ export function MenuPage() {
 
       {/* Hero Section */}
       <section
-        className="pt-32 pb-16 px-8 bg-slate-800 text-white relative bg-cover bg-center"
+        className="pt-32 pb-16 px-8 bg-earthy-brown text-white relative bg-cover bg-center"
         style={{
           backgroundImage: `url(https://github.com/Mrfocused1/YouTube-directory/blob/main/background.png?raw=true)`,
         }}
       >
-        <div className="absolute inset-0 bg-slate-900/60"></div>
+        <div className="absolute inset-0 bg-earthy-brown-dark/60"></div>
         <div className="container mx-auto text-center relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Menu</h1>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
@@ -291,7 +291,7 @@ export function MenuPage() {
       </section>
 
       {/* Footer CTA */}
-      <section className="py-16 px-8 bg-slate-800 text-white">
+      <section className="py-16 px-8 bg-earthy-brown text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Order?</h2>
           <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">

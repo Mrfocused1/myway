@@ -51,7 +51,7 @@ export function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-800 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-earthy-brown px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -168,7 +168,7 @@ export function AdminPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-slate-800 text-white py-6 px-8 shadow-lg">
+      <header className="bg-earthy-brown text-white py-6 px-8 shadow-lg">
         <div className="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold">
@@ -284,7 +284,7 @@ export function AdminPage() {
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-slate-800 text-white">
+                <thead className="bg-earthy-brown text-white">
                   <tr>
                     <th className="px-6 py-4 text-left font-semibold">Name</th>
                     <th className="px-6 py-4 text-left font-semibold">Description</th>

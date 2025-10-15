@@ -50,7 +50,7 @@ export function AboutPage() {
       <Navigation items={navItems} />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-8 bg-slate-800 text-white">
+      <section className="pt-32 pb-16 px-8 bg-earthy-brown text-white">
         <div className="container mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">About Us</h1>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
@@ -203,7 +203,7 @@ export function AboutPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact" className="py-16 px-8 bg-slate-800">
+      <section id="contact" className="py-16 px-8 bg-earthy-brown">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Get in Touch</h2>

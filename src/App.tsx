@@ -160,15 +160,15 @@ function App() {
       </section>
 
       {/* Section 5: Types of Cuisines */}
-      <section className="relative py-20 bg-amber-500 overflow-visible">
+      <section className="relative py-20 bg-earthy-cream overflow-visible">
         {/* Top Paint Splatter Effect */}
         <div className="absolute top-0 left-0 right-0 h-16 -mt-16 overflow-hidden">
           <svg className="w-full h-full" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,50 Q50,20 100,45 T200,50 Q250,30 300,50 T400,45 Q450,25 500,50 T600,48 Q650,28 700,50 T800,47 Q850,22 900,50 T1000,49 Q1050,25 1100,50 T1200,50 L1200,100 L0,100 Z"
-                  fill="#f59e0b"
+                  fill="#FAF6F1"
                   opacity="1"/>
             <path d="M0,60 Q60,40 120,55 T240,60 Q300,45 360,60 T480,58 Q540,42 600,65 T720,62 Q780,48 840,65 T960,63 Q1020,45 1080,65 T1200,65 L1200,100 L0,100 Z"
-                  fill="#f59e0b"
+                  fill="#FAF6F1"
                   opacity="0.8"/>
           </svg>
         </div>
@@ -177,10 +177,10 @@ function App() {
         <div className="absolute bottom-0 left-0 right-0 h-16 -mb-16 overflow-hidden">
           <svg className="w-full h-full" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,0 L0,50 Q50,70 100,45 T200,50 Q250,75 300,50 T400,55 Q450,78 500,50 T600,52 Q650,74 700,50 T800,53 Q850,80 900,50 T1000,51 Q1050,76 1100,50 T1200,50 L1200,0 Z"
-                  fill="#f59e0b"
+                  fill="#FAF6F1"
                   opacity="1"/>
             <path d="M0,0 L0,40 Q60,65 120,35 T240,40 Q300,60 360,40 T480,42 Q540,62 600,35 T720,38 Q780,58 840,35 T960,37 Q1020,60 1080,35 T1200,35 L1200,0 Z"
-                  fill="#f59e0b"
+                  fill="#FAF6F1"
                   opacity="0.8"/>
           </svg>
         </div>
@@ -193,11 +193,11 @@ function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-earthy-brown-dark mb-4">
               Explore Our Cuisines
             </h2>
-            <div className="h-1 w-20 bg-white mx-auto mb-6"></div>
-            <p className="text-xl text-white max-w-3xl mx-auto">
+            <div className="h-1 w-20 bg-earthy-brown-dark mx-auto mb-6"></div>
+            <p className="text-xl text-earthy-brown max-w-3xl mx-auto">
               A world of authentic flavors, crafted with passion and tradition
             </p>
           </motion.div>
@@ -323,7 +323,7 @@ function App() {
                     </p>
                     <button
                       onClick={() => toggleCard('caribbean')}
-                      className="inline-flex items-center gap-2 bg-amber-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors"
+                      className="inline-flex items-center gap-2 bg-earthy-cream text-white px-6 py-3 rounded-lg font-semibold hover:bg-earthy-cream-dark transition-colors"
                     >
                       Read More
                       <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -342,7 +342,7 @@ function App() {
                   }}
                 >
                   <h3 className="text-3xl font-bold text-foreground mb-4">Caribbean Cuisine</h3>
-                  <div className="h-1 w-20 bg-amber-500 mb-6"></div>
+                  <div className="h-1 w-20 bg-earthy-cream mb-6"></div>
                   <p className="text-lg text-foreground/90 leading-relaxed mb-6">
                     Immerse yourself in a vibrant culinary experience with our Caribbean cuisine catering service. I create each dish with a passion for the bold flavors and colorful ingredients that define this unique culture. From traditional jerk chicken to refreshing tropical salads, my menu is designed to transport your guests straight to the islands. Let's celebrate your next event with an unforgettable taste of the Caribbean!
                   </p>
@@ -358,7 +358,7 @@ function App() {
                     </button>
                     <a
                       href="/menu"
-                      className="inline-flex items-center gap-2 bg-amber-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors"
+                      className="inline-flex items-center gap-2 bg-earthy-cream text-white px-6 py-3 rounded-lg font-semibold hover:bg-earthy-cream-dark transition-colors"
                     >
                       View Menu
                       <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -397,7 +397,7 @@ function App() {
                       alt="European Cuisine"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-80"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-earthy-brown-dark via-earthy-brown-dark/50 to-transparent opacity-80"></div>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                     <h3 className="text-3xl font-bold mb-3">European</h3>
@@ -457,15 +457,15 @@ function App() {
       </section>
 
       {/* Section 6: Testimonials */}
-      <section className="relative py-20 bg-slate-800 overflow-visible">
+      <section className="relative py-20 bg-earthy-brown overflow-visible">
         {/* Bottom Paint Splatter Effect */}
         <div className="absolute bottom-0 left-0 right-0 h-16 -mb-16 overflow-hidden">
           <svg className="w-full h-full" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,0 L0,50 Q50,70 100,45 T200,50 Q250,75 300,50 T400,55 Q450,78 500,50 T600,52 Q650,74 700,50 T800,53 Q850,80 900,50 T1000,51 Q1050,76 1100,50 T1200,50 L1200,0 Z"
-                  fill="#1e293b"
+                  fill="#8B7355"
                   opacity="1"/>
             <path d="M0,0 L0,40 Q60,65 120,35 T240,40 Q300,60 360,40 T480,42 Q540,62 600,35 T720,38 Q780,58 840,35 T960,37 Q1020,60 1080,35 T1200,35 L1200,0 Z"
-                  fill="#1e293b"
+                  fill="#8B7355"
                   opacity="0.8"/>
           </svg>
         </div>
