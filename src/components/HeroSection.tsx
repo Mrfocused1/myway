@@ -63,7 +63,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
       <motion.section
         ref={ref}
         className={cn(
-          "relative flex w-full flex-col overflow-hidden bg-background text-foreground md:flex-row",
+          "relative flex w-full flex-col overflow-hidden bg-background text-foreground md:flex-row pt-40 sm:pt-48 md:pt-56 lg:pt-64",
           className
         )}
         initial="hidden"

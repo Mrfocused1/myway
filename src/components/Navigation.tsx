@@ -27,7 +27,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
             <img
               src="/myway-logo.svg"
               alt="MYWAY CATERING Logo"
-              className="h-20 w-auto max-w-[300px] object-contain pb-[15px] transition-transform hover:scale-105"
+              className="h-40 w-auto max-w-[600px] object-contain pb-[15px] transition-transform hover:scale-105"
             />
           </Link>
 
@@ -64,7 +64,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
             <img
               src="/myway-logo.svg"
               alt="MYWAY CATERING Logo"
-              className="h-16 w-auto max-w-[200px] object-contain pb-[15px]"
+              className="h-32 w-auto max-w-[400px] object-contain pb-[15px]"
             />
           </Link>
 
@@ -96,7 +96,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="md:hidden absolute top-28 left-4 right-4 rounded-2xl bg-background/95 backdrop-blur-sm shadow-xl border border-border/50 overflow-hidden"
+              className="md:hidden absolute top-40 left-4 right-4 rounded-2xl bg-background/95 backdrop-blur-sm shadow-xl border border-border/50 overflow-hidden"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
