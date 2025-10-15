@@ -68,12 +68,12 @@ export function Footer() {
             © {new Date().getFullYear()} Myway Catering. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-white/60 hover:text-white transition-colors text-sm">
+            <Link to="/privacy-policy" className="text-white/60 hover:text-white transition-colors text-sm">
               Privacy Policy
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors text-sm">
+            </Link>
+            <Link to="/terms-of-service" className="text-white/60 hover:text-white transition-colors text-sm">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>
