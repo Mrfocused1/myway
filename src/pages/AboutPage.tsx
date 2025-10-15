@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import emailjs from '@emailjs/browser';
 
 export function AboutPage() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ export function AboutPage() {
     guestCount: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -28,21 +31,59 @@ export function AboutPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your inquiry! We will get back to you shortly.');
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      eventDate: '',
-      eventType: '',
-      guestCount: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // EmailJS configuration from environment variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      // Check if EmailJS is configured
+      if (!serviceId || !templateId || !publicKey) {
+        console.error('EmailJS not configured. Please set environment variables.');
+        alert('Email service is not configured. Please contact us at mariam@mywaycatering.com');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        event_date: formData.eventDate,
+        event_type: formData.eventType,
+        guest_count: formData.guestCount,
+        message: formData.message,
+        to_email: 'mariam@mywaycatering.com'
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+      setSubmitStatus('success');
+      alert('Thank you for your inquiry! We will get back to you within 24 hours.');
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        eventDate: '',
+        eventType: '',
+        guestCount: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+      alert('There was an error sending your message. Please email us directly at mariam@mywaycatering.com');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -350,9 +391,10 @@ export function AboutPage() {
             <div className="text-center">
               <button
                 type="submit"
-                className="inline-block bg-earthy-green text-white font-semibold px-12 py-4 rounded-lg shadow-lg hover:bg-earthy-green-dark transition-all hover:scale-105"
+                disabled={isSubmitting}
+                className="inline-block bg-earthy-green text-white font-semibold px-12 py-4 rounded-lg shadow-lg hover:bg-earthy-green-dark transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                Submit Inquiry
+                {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
               </button>
             </div>
           </form>
