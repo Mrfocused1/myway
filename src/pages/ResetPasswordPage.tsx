@@ -13,14 +13,18 @@ export function ResetPasswordPage() {
   const navigate = useNavigate()
 
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout
+
     // Listen for auth state changes to handle the password reset token
     const { data: authListener } = supabase.auth.onAuthStateChange(async (event, session) => {
       console.log('Auth event:', event, 'Session:', session)
 
       if (event === 'PASSWORD_RECOVERY') {
         setValidToken(true)
+        if (timeoutId) clearTimeout(timeoutId)
       } else if (session) {
         setValidToken(true)
+        if (timeoutId) clearTimeout(timeoutId)
       }
     })
 
@@ -33,17 +37,21 @@ export function ResetPasswordPage() {
         setValidToken(true)
       } else {
         // Wait a bit for the auth state change event to fire
-        setTimeout(() => {
-          if (!validToken) {
-            setError('Invalid or expired reset link. Please request a new one.')
-          }
-        }, 2000)
+        timeoutId = setTimeout(() => {
+          setValidToken(prev => {
+            if (!prev) {
+              setError('Invalid or expired reset link. Please request a new one.')
+            }
+            return prev
+          })
+        }, 3000)
       }
     }
 
     checkSession()
 
     return () => {
+      if (timeoutId) clearTimeout(timeoutId)
       authListener.subscription.unsubscribe()
     }
   }, [])
