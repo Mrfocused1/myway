@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-import emailjs from '@emailjs/browser';
 
 export function AboutPage() {
   const [formData, setFormData] = useState({
@@ -13,8 +12,6 @@ export function AboutPage() {
     guestCount: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -31,59 +28,43 @@ export function AboutPage() {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
 
-    try {
-      // EmailJS configuration from environment variables
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    // Format event type for better readability
+    const eventTypeDisplay = formData.eventType.charAt(0).toUpperCase() + formData.eventType.slice(1);
 
-      // Check if EmailJS is configured
-      if (!serviceId || !templateId || !publicKey) {
-        console.error('EmailJS not configured. Please set environment variables.');
-        alert('Email service is not configured. Please contact us at mariam@mywaycatering.com');
-        setIsSubmitting(false);
-        return;
-      }
+    // Create email subject and body
+    const subject = `New Catering Inquiry from ${formData.name}`;
+    const body = `
+Hello MYWAY Catering,
 
-      // Send email using EmailJS
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        event_date: formData.eventDate,
-        event_type: formData.eventType,
-        guest_count: formData.guestCount,
-        message: formData.message,
-        to_email: 'mariam@mywaycatering.com'
-      };
+I would like to request a catering quote for my upcoming event.
 
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+EVENT DETAILS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Event Date: ${formData.eventDate}
+Event Type: ${eventTypeDisplay}
+Expected Guest Count: ${formData.guestCount}
 
-      setSubmitStatus('success');
-      alert('Thank you for your inquiry! We will get back to you within 24 hours.');
+ADDITIONAL DETAILS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${formData.message || 'No additional details provided.'}
 
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        eventDate: '',
-        eventType: '',
-        guestCount: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('Error sending email:', error);
-      setSubmitStatus('error');
-      alert('There was an error sending your message. Please email us directly at mariam@mywaycatering.com');
-    } finally {
-      setIsSubmitting(false);
-    }
+Please get back to me at your earliest convenience.
+
+Thank you!
+${formData.name}
+    `.trim();
+
+    // Create mailto link with encoded parameters
+    const mailtoLink = `mailto:mariam@mywaycatering.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Open default email client
+    window.location.href = mailtoLink;
   };
 
   return (
@@ -391,10 +372,9 @@ export function AboutPage() {
             <div className="text-center">
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="inline-block bg-earthy-green text-white font-semibold px-12 py-4 rounded-lg shadow-lg hover:bg-earthy-green-dark transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="inline-block bg-earthy-green text-white font-semibold px-12 py-4 rounded-lg shadow-lg hover:bg-earthy-green-dark transition-all hover:scale-105"
               >
-                {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
+                Submit Inquiry
               </button>
             </div>
           </form>
