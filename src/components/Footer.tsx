@@ -12,9 +12,6 @@ export function Footer() {
               alt="MYWAY CATERING Logo"
               className="h-40 mb-4 object-contain"
             />
-            <p className="text-white/70 mb-4 leading-relaxed hidden md:block">
-              Where exceptional culinary experiences meet personalised service. We take pride in crafting delicious meals tailored to your unique events.
-            </p>
           </div>
 
           {/* Quick Links */}
