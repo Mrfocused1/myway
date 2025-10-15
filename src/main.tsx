@@ -14,6 +14,12 @@ import { TermsOfServicePage } from './pages/TermsOfServicePage.tsx'
 import { ScrollToTop } from './components/ScrollToTop.tsx'
 import { AuthProvider } from './contexts/AuthContext.tsx'
 import { ProtectedRoute } from './components/ProtectedRoute.tsx'
+import Test1 from './pages/Test1.tsx'
+import Test2 from './pages/Test2.tsx'
+import Test3 from './pages/Test3.tsx'
+import Test4 from './pages/Test4.tsx'
+import Test5 from './pages/Test5.tsx'
+import Test6 from './pages/Test6.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -37,6 +43,13 @@ createRoot(document.getElementById('root')!).render(
               </ProtectedRoute>
             }
           />
+          {/* Test Pages */}
+          <Route path="/1" element={<Test1 />} />
+          <Route path="/2" element={<Test2 />} />
+          <Route path="/3" element={<Test3 />} />
+          <Route path="/4" element={<Test4 />} />
+          <Route path="/5" element={<Test5 />} />
+          <Route path="/6" element={<Test6 />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
