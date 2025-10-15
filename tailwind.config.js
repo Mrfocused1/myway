@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Nunito', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -23,6 +26,20 @@ export default {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
+        },
+        // Earthy color palette
+        'earthy-green': {
+          DEFAULT: '#6B8E23',    // Olive drab
+          dark: '#4A5D23',       // Dark olive
+          light: '#8BA846',      // Light olive
+        },
+        'earthy-cream': {
+          DEFAULT: '#FAF6F1',    // Light cream
+          dark: '#F5EFE7',       // Darker cream
+        },
+        'earthy-brown': {
+          DEFAULT: '#8B7355',    // Earthy brown
+          dark: '#6F4E37',       // Coffee brown
         },
       },
       maxWidth: {

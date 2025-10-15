@@ -201,7 +201,7 @@ export function AdminPage() {
               onClick={() => setActiveTab('menu')}
               className={`px-6 py-4 font-semibold transition-colors border-b-2 ${
                 activeTab === 'menu'
-                  ? 'text-emerald-700 border-emerald-700'
+                  ? 'text-earthy-green border-earthy-green'
                   : 'text-muted-foreground border-transparent hover:text-foreground'
               }`}
             >
@@ -211,7 +211,7 @@ export function AdminPage() {
               onClick={() => setActiveTab('packages')}
               className={`px-6 py-4 font-semibold transition-colors border-b-2 ${
                 activeTab === 'packages'
-                  ? 'text-emerald-700 border-emerald-700'
+                  ? 'text-earthy-green border-earthy-green'
                   : 'text-muted-foreground border-transparent hover:text-foreground'
               }`}
             >
@@ -230,7 +230,7 @@ export function AdminPage() {
         <div className="mb-8 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
           <button
             onClick={openAddModal}
-            className="bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition-colors flex items-center gap-2"
+            className="bg-earthy-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-earthy-green-dark transition-colors flex items-center gap-2"
           >
             <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M12 4v16m8-8H4" />
@@ -250,14 +250,14 @@ export function AdminPage() {
             placeholder="Search menu items..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-4 py-3 rounded-lg border-2 border-emerald-700 bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+            className="w-full px-4 py-3 rounded-lg border-2 border-earthy-green bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
           />
 
           <div className="flex gap-4">
             <select
               value={filterCuisine}
               onChange={(e) => setFilterCuisine(e.target.value)}
-              className="px-4 py-2 rounded-lg border-2 border-emerald-700 bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+              className="px-4 py-2 rounded-lg border-2 border-earthy-green bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
             >
               <option value="All">All Cuisines</option>
               {cuisines.map(c => <option key={c} value={c}>{c}</option>)}
@@ -266,7 +266,7 @@ export function AdminPage() {
             <select
               value={filterCategory}
               onChange={(e) => setFilterCategory(e.target.value)}
-              className="px-4 py-2 rounded-lg border-2 border-emerald-700 bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+              className="px-4 py-2 rounded-lg border-2 border-earthy-green bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
             >
               <option value="All">All Categories</option>
               {categories.map(c => <option key={c} value={c}>{c}</option>)}
@@ -277,7 +277,7 @@ export function AdminPage() {
         {/* Menu Items Table */}
         {loading ? (
           <div className="text-center py-12">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-700"></div>
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-earthy-green"></div>
             <p className="mt-4 text-foreground">Loading menu items...</p>
           </div>
         ) : (
@@ -360,7 +360,7 @@ export function AdminPage() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
                       placeholder="e.g., Jollof Rice"
                     />
                   </div>
@@ -374,7 +374,7 @@ export function AdminPage() {
                       onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                       required
                       rows={3}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
                       placeholder="Describe the dish..."
                     />
                   </div>
@@ -388,7 +388,7 @@ export function AdminPage() {
                         value={formData.cuisine}
                         onChange={(e) => setFormData({ ...formData, cuisine: e.target.value })}
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
                       >
                         {cuisines.map(c => (
                           <option key={c} value={c}>{c}</option>
@@ -404,7 +404,7 @@ export function AdminPage() {
                         value={formData.category}
                         onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
                       >
                         {categories.map(c => (
                           <option key={c} value={c}>{c}</option>
@@ -421,7 +421,7 @@ export function AdminPage() {
                       type="text"
                       value={formData.allergens}
                       onChange={(e) => setFormData({ ...formData, allergens: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
                       placeholder="e.g., Gluten, Eggs, Milk"
                     />
                     <p className="text-xs text-muted-foreground mt-1">
@@ -437,7 +437,7 @@ export function AdminPage() {
                       type="text"
                       value={formData.may_contain}
                       onChange={(e) => setFormData({ ...formData, may_contain: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
                       placeholder="e.g., Nuts, Seeds"
                     />
                   </div>
@@ -445,7 +445,7 @@ export function AdminPage() {
                   <div className="flex gap-4 pt-4">
                     <button
                       type="submit"
-                      className="flex-1 bg-emerald-700 text-white font-semibold py-3 rounded-lg hover:bg-emerald-600 transition-colors"
+                      className="flex-1 bg-earthy-green text-white font-semibold py-3 rounded-lg hover:bg-earthy-green-dark transition-colors"
                     >
                       {editingItem ? 'Update Item' : 'Add Item'}
                     </button>

@@ -126,7 +126,7 @@ export function CateringServicesPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Our Services
             </h2>
-            <div className="h-1 w-20 bg-emerald-700 mx-auto mb-6"></div>
+            <div className="h-1 w-20 bg-earthy-green mx-auto mb-6"></div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Comprehensive catering solutions tailored to your needs
             </p>
@@ -162,7 +162,7 @@ export function CateringServicesPage() {
                   <ul className="space-y-3">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
-                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-700 flex items-center justify-center text-white text-xs font-bold mt-0.5">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-earthy-green flex items-center justify-center text-white text-xs font-bold mt-0.5">
                           ✓
                         </span>
                         <span className="text-foreground/90">{feature}</span>
@@ -189,7 +189,7 @@ export function CateringServicesPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Catering Packages
             </h2>
-            <div className="h-1 w-20 bg-emerald-700 mx-auto mb-6"></div>
+            <div className="h-1 w-20 bg-earthy-green mx-auto mb-6"></div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Choose the package that best fits your event needs and budget
             </p>
@@ -197,7 +197,7 @@ export function CateringServicesPage() {
 
           {loading ? (
             <div className="text-center py-12">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-700"></div>
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-earthy-green"></div>
               <p className="mt-4 text-muted-foreground">Loading packages...</p>
             </div>
           ) : (
@@ -207,7 +207,7 @@ export function CateringServicesPage() {
                 key={pkg.name}
                 className={`relative p-8 rounded-2xl border-2 ${
                   pkg.featured
-                    ? 'border-emerald-700 bg-white shadow-xl scale-105'
+                    ? 'border-earthy-green bg-white shadow-xl scale-105'
                     : 'border-border bg-background'
                 }`}
                 initial={{ opacity: 0, y: 50 }}
@@ -216,21 +216,21 @@ export function CateringServicesPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 {pkg.featured && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-700 text-white px-6 py-1 rounded-full text-sm font-bold">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-earthy-green text-white px-6 py-1 rounded-full text-sm font-bold">
                     MOST POPULAR
                   </div>
                 )}
 
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-foreground mb-2">{pkg.name}</h3>
-                  <p className="text-3xl font-bold text-emerald-700 mb-2">{pkg.price}</p>
+                  <p className="text-3xl font-bold text-earthy-green mb-2">{pkg.price}</p>
                   <p className="text-sm text-muted-foreground">{pkg.description}</p>
                 </div>
 
                 <div className="space-y-3 mb-8">
                   {pkg.includes.map((item) => (
                     <div key={item} className="flex items-start gap-3">
-                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-700/10 flex items-center justify-center text-emerald-700 text-xs font-bold mt-0.5">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-earthy-green/10 flex items-center justify-center text-earthy-green text-xs font-bold mt-0.5">
                         ✓
                       </span>
                       <span className="text-foreground/90 text-sm">{item}</span>
@@ -242,7 +242,7 @@ export function CateringServicesPage() {
                   href="/about#contact"
                   className={`block w-full text-center py-3 rounded-lg font-semibold transition-all ${
                     pkg.featured
-                      ? 'bg-emerald-700 text-white hover:bg-emerald-600'
+                      ? 'bg-earthy-green text-white hover:bg-earthy-green-dark'
                       : 'bg-secondary text-foreground hover:bg-secondary/80'
                   }`}
                 >
@@ -265,7 +265,7 @@ export function CateringServicesPage() {
             </p>
             <a
               href="/about#contact"
-              className="inline-block text-emerald-700 font-semibold hover:underline"
+              className="inline-block text-earthy-green font-semibold hover:underline"
             >
               Contact us for a custom quote →
             </a>
@@ -286,7 +286,7 @@ export function CateringServicesPage() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Why Choose My Way Catering
             </h2>
-            <div className="h-1 w-20 bg-emerald-700 mx-auto"></div>
+            <div className="h-1 w-20 bg-earthy-green mx-auto"></div>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -316,7 +316,7 @@ export function CateringServicesPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="w-16 h-16 rounded-full bg-emerald-700 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-earthy-green flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold">{index + 1}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-3">{item.title}</h3>
@@ -359,7 +359,7 @@ export function CateringServicesPage() {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
                       href="/about#contact"
-                      className="inline-block bg-emerald-700 text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-emerald-600 transition-all hover:scale-105"
+                      className="inline-block bg-earthy-green text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-earthy-green-dark transition-all hover:scale-105"
                     >
                       Request a Quote
                     </a>

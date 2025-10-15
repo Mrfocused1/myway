@@ -32,7 +32,7 @@ export function PrivacyPolicyPage() {
             {/* Introduction */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Introduction</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 Welcome to MYWAY Catering ("we," "our," or "us"). We are committed to protecting your personal information
                 and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your
@@ -47,7 +47,7 @@ export function PrivacyPolicyPage() {
             {/* Information We Collect */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Information We Collect</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
 
               <h3 className="text-xl font-bold text-foreground mb-3">Personal Information You Provide</h3>
               <p className="text-foreground/80 leading-relaxed mb-4">
@@ -88,7 +88,7 @@ export function PrivacyPolicyPage() {
             {/* How We Use Your Information */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">How We Use Your Information</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 We use the information we collect for the following purposes:
               </p>
@@ -106,7 +106,7 @@ export function PrivacyPolicyPage() {
             {/* How We Share Your Information */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">How We Share Your Information</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 We may share your information in the following situations:
               </p>
@@ -124,7 +124,7 @@ export function PrivacyPolicyPage() {
             {/* Data Security */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Data Security</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 We implement appropriate technical and organizational security measures to protect your personal information
                 against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over
@@ -135,7 +135,7 @@ export function PrivacyPolicyPage() {
             {/* Your Privacy Rights */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Your Privacy Rights</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 Depending on your location, you may have the following rights regarding your personal information:
               </p>
@@ -156,7 +156,7 @@ export function PrivacyPolicyPage() {
             {/* Cookies */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Cookies and Tracking Technologies</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 We may use cookies and similar tracking technologies to collect and track information about your browsing
                 activities on our website. Cookies are small data files stored on your device that help us improve our website
@@ -171,7 +171,7 @@ export function PrivacyPolicyPage() {
             {/* Third-Party Links */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Third-Party Websites</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed">
                 Our website may contain links to third-party websites. We are not responsible for the privacy practices or
                 content of these third-party sites. We encourage you to review the privacy policies of any third-party sites
@@ -182,7 +182,7 @@ export function PrivacyPolicyPage() {
             {/* Children's Privacy */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Children's Privacy</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed">
                 Our services are not directed to individuals under the age of 18. We do not knowingly collect personal
                 information from children. If you believe we have collected information from a child, please contact us
@@ -193,7 +193,7 @@ export function PrivacyPolicyPage() {
             {/* Changes to Policy */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Changes to This Privacy Policy</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed">
                 We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new
                 Privacy Policy on this page and updating the "Last updated" date. We encourage you to review this Privacy
@@ -204,14 +204,14 @@ export function PrivacyPolicyPage() {
             {/* Contact Information */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Contact Us</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 If you have any questions or concerns about this Privacy Policy or our privacy practices, please contact us:
               </p>
               <div className="bg-slate-100 p-6 rounded-lg">
                 <p className="text-foreground font-semibold mb-2">MYWAY Catering</p>
-                <p className="text-foreground/80">Email: <a href="mailto:mariam@mywaycatering.com" className="text-emerald-700 hover:text-emerald-600">mariam@mywaycatering.com</a></p>
-                <p className="text-foreground/80">Phone: <a href="tel:+4471961032314" className="text-emerald-700 hover:text-emerald-600">+44 7196 103 2314</a></p>
+                <p className="text-foreground/80">Email: <a href="mailto:mariam@mywaycatering.com" className="text-earthy-green hover:text-earthy-green-dark">mariam@mywaycatering.com</a></p>
+                <p className="text-foreground/80">Phone: <a href="tel:+4471961032314" className="text-earthy-green hover:text-earthy-green-dark">+44 7196 103 2314</a></p>
               </div>
             </div>
 

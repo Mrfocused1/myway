@@ -68,7 +68,7 @@ export function AccordionSection() {
   };
 
   return (
-    <div className="bg-emerald-700 font-sans">
+    <div className="bg-earthy-green font-sans">
       <section className="container mx-auto px-8 py-16">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
 
@@ -83,7 +83,7 @@ export function AccordionSection() {
             <div className="mt-8">
               <a
                 href="/menu"
-                className="inline-block bg-white text-emerald-700 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-white/90 transition-all hover:scale-105"
+                className="inline-block bg-white text-earthy-green font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-white/90 transition-all hover:scale-105"
               >
                 View Full Menu
               </a>

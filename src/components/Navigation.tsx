@@ -23,7 +23,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         {/* Desktop Menu */}
         <div className="hidden md:flex justify-center items-center gap-8 relative">
           {/* Navigation Items - Centered */}
-          <div className="rounded-full bg-emerald-700 backdrop-blur-sm px-10 py-4 shadow-lg border border-emerald-600">
+          <div className="rounded-full bg-earthy-green backdrop-blur-sm px-10 py-4 shadow-lg border border-earthy-green">
             <ul className="flex items-center gap-8">
               {items.map((item) => (
                 <li key={item.label}>
@@ -61,7 +61,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
 
           {/* Mobile Menu Button */}
           <button
-            className="rounded-full bg-emerald-700/80 backdrop-blur-sm p-4 shadow-lg border border-emerald-600/50"
+            className="rounded-full bg-earthy-green/80 backdrop-blur-sm p-4 shadow-lg border border-earthy-green/50"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >

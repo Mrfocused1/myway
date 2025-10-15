@@ -64,7 +64,7 @@ export function AboutPage() {
         <div className="container mx-auto max-w-4xl">
           <div className="mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">We Take Pride in Catering</h2>
-            <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+            <div className="h-1 w-20 bg-earthy-green mb-6"></div>
             <div className="text-lg text-foreground/90 leading-relaxed">
               <p>
                 Welcome to Myway Catering, where exceptional culinary experiences meet personalized service. We specialize in authentic Nigerian, Caribbean, and European cuisine, crafting delicious meals tailored to your unique events. From intimate gatherings to grand celebrations, we work closely with clients to create menus that reflect their tastes and preferences, bringing your vision to life with exquisite flavors and impeccable presentation.
@@ -75,7 +75,7 @@ export function AboutPage() {
       </section>
 
       {/* Mission & Values Section */}
-      <section className="py-16 px-8 bg-emerald-700">
+      <section className="py-16 px-8 bg-earthy-green">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8">
             {/* Mission */}
@@ -143,12 +143,12 @@ export function AboutPage() {
         <div className="container mx-auto max-w-4xl">
           <div className="mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">What We Do</h2>
-            <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+            <div className="h-1 w-20 bg-earthy-green mb-6"></div>
           </div>
 
           <div className="space-y-6">
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-700 flex items-center justify-center text-white font-bold">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-earthy-green flex items-center justify-center text-white font-bold">
                 1
               </div>
               <div>
@@ -161,7 +161,7 @@ export function AboutPage() {
             </div>
 
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-700 flex items-center justify-center text-white font-bold">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-earthy-green flex items-center justify-center text-white font-bold">
                 2
               </div>
               <div>
@@ -174,7 +174,7 @@ export function AboutPage() {
             </div>
 
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-700 flex items-center justify-center text-white font-bold">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-earthy-green flex items-center justify-center text-white font-bold">
                 3
               </div>
               <div>
@@ -187,7 +187,7 @@ export function AboutPage() {
             </div>
 
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-700 flex items-center justify-center text-white font-bold">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-earthy-green flex items-center justify-center text-white font-bold">
                 4
               </div>
               <div>
@@ -207,7 +207,7 @@ export function AboutPage() {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Get in Touch</h2>
-            <div className="h-1 w-20 bg-emerald-700 mx-auto mb-6"></div>
+            <div className="h-1 w-20 bg-earthy-green mx-auto mb-6"></div>
             <p className="text-xl text-white/80">
               Ready to plan your next event? Fill out the form below and we'll get back to you within 24 hours.
             </p>
@@ -227,7 +227,7 @@ export function AboutPage() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green focus:border-transparent"
                   placeholder="John Doe"
                 />
               </div>
@@ -244,7 +244,7 @@ export function AboutPage() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green focus:border-transparent"
                   placeholder="john@example.com"
                 />
               </div>
@@ -261,7 +261,7 @@ export function AboutPage() {
                   required
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green focus:border-transparent"
                   placeholder="+1 (555) 123-4567"
                 />
               </div>
@@ -278,7 +278,7 @@ export function AboutPage() {
                   required
                   value={formData.eventDate}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green focus:border-transparent"
                 />
               </div>
 
@@ -293,7 +293,7 @@ export function AboutPage() {
                   required
                   value={formData.eventType}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-transparent appearance-none cursor-pointer"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green focus:border-transparent appearance-none cursor-pointer"
                   style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23374151' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
                     backgroundRepeat: 'no-repeat',
@@ -324,7 +324,7 @@ export function AboutPage() {
                   min="1"
                   value={formData.guestCount}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green focus:border-transparent"
                   placeholder="50"
                 />
               </div>
@@ -341,7 +341,7 @@ export function AboutPage() {
                 rows={6}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-transparent resize-none"
+                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green focus:border-transparent resize-none"
                 placeholder="Tell us about your event, dietary requirements, or any special requests..."
               />
             </div>
@@ -350,7 +350,7 @@ export function AboutPage() {
             <div className="text-center">
               <button
                 type="submit"
-                className="inline-block bg-emerald-700 text-white font-semibold px-12 py-4 rounded-lg shadow-lg hover:bg-emerald-600 transition-all hover:scale-105"
+                className="inline-block bg-earthy-green text-white font-semibold px-12 py-4 rounded-lg shadow-lg hover:bg-earthy-green-dark transition-all hover:scale-105"
               >
                 Submit Inquiry
               </button>
@@ -375,7 +375,7 @@ export function AboutPage() {
             </a>
             <a
               href="tel:+4471961032314"
-              className="inline-block bg-emerald-700 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-emerald-600 transition-all hover:scale-105"
+              className="inline-block bg-earthy-green text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-earthy-green-dark transition-all hover:scale-105"
             >
               Call Us Now
             </a>

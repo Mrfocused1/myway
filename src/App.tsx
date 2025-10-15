@@ -86,7 +86,7 @@ function App() {
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Our Services
             </h2>
-            <div className="h-1 w-20 bg-emerald-700 mx-auto mb-6"></div>
+            <div className="h-1 w-20 bg-earthy-green mx-auto mb-6"></div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Tailored catering solutions for every occasion, from corporate functions to intimate celebrations
             </p>
@@ -151,7 +151,7 @@ function App() {
             </p>
             <a
               href="/about#contact"
-              className="inline-block bg-emerald-700 text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:bg-emerald-600 transition-all hover:scale-105"
+              className="inline-block bg-earthy-green text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:bg-earthy-green-dark transition-all hover:scale-105"
             >
               Contact Us for Consultation
             </a>
@@ -240,7 +240,7 @@ function App() {
                     </p>
                     <button
                       onClick={() => toggleCard('nigerian')}
-                      className="inline-flex items-center gap-2 bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition-colors"
+                      className="inline-flex items-center gap-2 bg-earthy-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-earthy-green-dark transition-colors"
                     >
                       Read More
                       <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -259,7 +259,7 @@ function App() {
                   }}
                 >
                   <h3 className="text-3xl font-bold text-foreground mb-4">Nigerian Cuisine</h3>
-                  <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+                  <div className="h-1 w-20 bg-earthy-green mb-6"></div>
                   <p className="text-lg text-foreground/90 leading-relaxed mb-6">
                     Experience the essence of Africa through my catering service specializing in African cuisine. I offer a diverse menu that highlights the unique spices, fresh ingredients, and time-honored recipes that have been passed down through generations. Whether for a special event or an intimate gathering, allow me to bring the warmth and richness of Africa to your table.
                   </p>
@@ -275,7 +275,7 @@ function App() {
                     </button>
                     <a
                       href="/menu"
-                      className="inline-flex items-center gap-2 bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition-colors"
+                      className="inline-flex items-center gap-2 bg-earthy-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-earthy-green-dark transition-colors"
                     >
                       View Menu
                       <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -406,7 +406,7 @@ function App() {
                     </p>
                     <button
                       onClick={() => toggleCard('european')}
-                      className="inline-flex items-center gap-2 bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition-colors"
+                      className="inline-flex items-center gap-2 bg-earthy-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-earthy-green-dark transition-colors"
                     >
                       Read More
                       <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -425,7 +425,7 @@ function App() {
                   }}
                 >
                   <h3 className="text-3xl font-bold text-foreground mb-4">European Cuisine</h3>
-                  <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+                  <div className="h-1 w-20 bg-earthy-green mb-6"></div>
                   <p className="text-lg text-foreground/90 leading-relaxed mb-6">
                     Elevate your next event with our exceptional English Cuisine catering service. Whether it's a corporate gathering, a wedding, or a family celebration, I take pride in delivering authentic English dishes that showcase quality and tradition. From classic roasts to delightful desserts, every meal is prepared with care and attention to detail, ensuring a memorable dining experience for you and your guests.
                   </p>
@@ -441,7 +441,7 @@ function App() {
                     </button>
                     <a
                       href="/menu"
-                      className="inline-flex items-center gap-2 bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition-colors"
+                      className="inline-flex items-center gap-2 bg-earthy-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-earthy-green-dark transition-colors"
                     >
                       View Menu
                       <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -481,7 +481,7 @@ function App() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               What Our Clients Say
             </h2>
-            <div className="h-1 w-20 bg-emerald-700 mx-auto mb-6"></div>
+            <div className="h-1 w-20 bg-earthy-green mx-auto mb-6"></div>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
               Don't just take our word for it—hear from those who've experienced our exceptional catering
             </p>
@@ -538,7 +538,7 @@ function App() {
             </p>
             <a
               href="/about#contact"
-              className="inline-block bg-emerald-700 text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:bg-emerald-600 transition-all hover:scale-105"
+              className="inline-block bg-earthy-green text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:bg-earthy-green-dark transition-all hover:scale-105"
             >
               Book Your Event Today
             </a>

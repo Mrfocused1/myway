@@ -30,7 +30,7 @@ export function TestimonialCard({ author, text, href, className }: TestimonialCa
       {/* Quote Icon */}
       <div className="flex-shrink-0">
         <svg
-          className="w-8 h-8 text-emerald-700/20"
+          className="w-8 h-8 text-earthy-green/20"
           fill="currentColor"
           viewBox="0 0 24 24"
         >

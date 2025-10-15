@@ -79,7 +79,7 @@ export function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700"
+                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green focus:border-earthy-green"
                 placeholder="admin@example.com"
               />
             </div>
@@ -95,7 +95,7 @@ export function LoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green focus:border-earthy-green"
                   placeholder="Enter your password"
                 />
               </div>
@@ -116,7 +116,7 @@ export function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-emerald-700 text-white font-semibold py-3 rounded-lg hover:bg-emerald-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-earthy-green text-white font-semibold py-3 rounded-lg hover:bg-earthy-green-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (isForgotPassword ? 'Sending...' : 'Signing in...') : (isForgotPassword ? 'Send Reset Link' : 'Sign In')}
             </button>
@@ -130,7 +130,7 @@ export function LoginPage() {
                   setError('')
                   setSuccess('')
                 }}
-                className="text-sm text-emerald-700 hover:text-emerald-600 transition-colors block w-full"
+                className="text-sm text-earthy-green hover:text-earthy-green-dark transition-colors block w-full"
               >
                 Forgot password?
               </button>
@@ -141,7 +141,7 @@ export function LoginPage() {
                   setError('')
                   setSuccess('')
                 }}
-                className="text-sm text-emerald-700 hover:text-emerald-600 transition-colors block w-full"
+                className="text-sm text-earthy-green hover:text-earthy-green-dark transition-colors block w-full"
               >
                 ← Back to login
               </button>

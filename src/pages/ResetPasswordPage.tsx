@@ -135,7 +135,7 @@ export function ResetPasswordPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   minLength={6}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green focus:border-earthy-green"
                   placeholder="Enter new password (min 6 characters)"
                 />
               </div>
@@ -151,7 +151,7 @@ export function ResetPasswordPage() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
                   minLength={6}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green focus:border-earthy-green"
                   placeholder="Confirm new password"
                 />
               </div>
@@ -165,7 +165,7 @@ export function ResetPasswordPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-emerald-700 text-white font-semibold py-3 rounded-lg hover:bg-emerald-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-earthy-green text-white font-semibold py-3 rounded-lg hover:bg-earthy-green-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? 'Updating Password...' : 'Update Password'}
               </button>
@@ -177,7 +177,7 @@ export function ResetPasswordPage() {
               </div>
               <a
                 href="/admin"
-                className="block w-full text-center bg-emerald-700 text-white font-semibold py-3 rounded-lg hover:bg-emerald-600 transition-colors"
+                className="block w-full text-center bg-earthy-green text-white font-semibold py-3 rounded-lg hover:bg-earthy-green-dark transition-colors"
               >
                 Request New Reset Link
               </a>
@@ -187,7 +187,7 @@ export function ResetPasswordPage() {
           <div className="mt-6 text-center">
             <a
               href="/admin"
-              className="text-sm text-emerald-700 hover:text-emerald-600 transition-colors"
+              className="text-sm text-earthy-green hover:text-earthy-green-dark transition-colors"
             >
               ← Back to login
             </a>

@@ -138,7 +138,7 @@ export function CateringPackagesManager() {
       <div className="mb-8 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
         <button
           onClick={openAddModal}
-          className="bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition-colors flex items-center gap-2"
+          className="bg-earthy-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-earthy-green-dark transition-colors flex items-center gap-2"
         >
           <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
             <path d="M12 4v16m8-8H4" />
@@ -154,7 +154,7 @@ export function CateringPackagesManager() {
       {/* Packages Display */}
       {loading ? (
         <div className="text-center py-12">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-700"></div>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-earthy-green"></div>
           <p className="mt-4 text-foreground">Loading packages...</p>
         </div>
       ) : (
@@ -164,19 +164,19 @@ export function CateringPackagesManager() {
               key={pkg.id}
               className={`relative p-6 rounded-2xl border-2 ${
                 pkg.featured
-                  ? 'border-emerald-700 bg-white shadow-lg'
+                  ? 'border-earthy-green bg-white shadow-lg'
                   : 'border-border bg-background'
               }`}
             >
               {pkg.featured && (
-                <div className="absolute -top-3 left-4 bg-emerald-700 text-white px-4 py-1 rounded-full text-xs font-bold">
+                <div className="absolute -top-3 left-4 bg-earthy-green text-white px-4 py-1 rounded-full text-xs font-bold">
                   FEATURED
                 </div>
               )}
 
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-foreground mb-2">{pkg.name}</h3>
-                <p className="text-2xl font-bold text-emerald-700 mb-2">{pkg.price}</p>
+                <p className="text-2xl font-bold text-earthy-green mb-2">{pkg.price}</p>
                 <p className="text-sm text-muted-foreground mb-3">{pkg.description}</p>
                 <div className="text-xs text-muted-foreground mb-3">Order: {pkg.display_order}</div>
               </div>
@@ -186,7 +186,7 @@ export function CateringPackagesManager() {
                 <ul className="space-y-1">
                   {pkg.includes.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
-                      <span className="text-emerald-700 mt-0.5">✓</span>
+                      <span className="text-earthy-green mt-0.5">✓</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -243,7 +243,7 @@ export function CateringPackagesManager() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
                       placeholder="e.g., Premium"
                     />
                   </div>
@@ -257,7 +257,7 @@ export function CateringPackagesManager() {
                       value={formData.price}
                       onChange={(e) => setFormData({ ...formData, price: e.target.value })}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
                       placeholder="e.g., Starting at $45/person"
                     />
                   </div>
@@ -271,7 +271,7 @@ export function CateringPackagesManager() {
                       onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                       required
                       rows={2}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
                       placeholder="Brief description of the package..."
                     />
                   </div>
@@ -285,7 +285,7 @@ export function CateringPackagesManager() {
                       onChange={(e) => setFormData({ ...formData, includes: e.target.value })}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
                       placeholder="Choice of 3 appetizers&#10;2 main course options&#10;3 side dishes&#10;Professional serving staff"
                     />
                     <p className="text-xs text-muted-foreground mt-1">
@@ -302,7 +302,7 @@ export function CateringPackagesManager() {
                         type="number"
                         value={formData.display_order}
                         onChange={(e) => setFormData({ ...formData, display_order: parseInt(e.target.value) })}
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green"
                         min="0"
                       />
                     </div>
@@ -313,7 +313,7 @@ export function CateringPackagesManager() {
                           type="checkbox"
                           checked={formData.featured}
                           onChange={(e) => setFormData({ ...formData, featured: e.target.checked })}
-                          className="w-5 h-5 rounded border-border text-emerald-700 focus:ring-emerald-700"
+                          className="w-5 h-5 rounded border-border text-earthy-green focus:ring-earthy-green"
                         />
                         <span className="text-sm font-medium text-foreground">Featured Package</span>
                       </label>
@@ -323,7 +323,7 @@ export function CateringPackagesManager() {
                   <div className="flex gap-4 pt-4">
                     <button
                       type="submit"
-                      className="flex-1 bg-emerald-700 text-white font-semibold py-3 rounded-lg hover:bg-emerald-600 transition-colors"
+                      className="flex-1 bg-earthy-green text-white font-semibold py-3 rounded-lg hover:bg-earthy-green-dark transition-colors"
                     >
                       {editingPackage ? 'Update Package' : 'Add Package'}
                     </button>

@@ -32,7 +32,7 @@ export function TermsOfServicePage() {
             {/* Introduction */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Agreement to Terms</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 These Terms of Service ("Terms") constitute a legally binding agreement between you and MYWAY Catering
                 ("Company," "we," "us," or "our") concerning your access to and use of our website (www.samplesites.space)
@@ -47,7 +47,7 @@ export function TermsOfServicePage() {
             {/* Services */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Our Services</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 MYWAY Catering provides professional catering services specializing in Nigerian, Caribbean, and European
                 cuisine for various events including:
@@ -67,7 +67,7 @@ export function TermsOfServicePage() {
             {/* Booking and Reservations */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Booking and Reservations</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
 
               <h3 className="text-xl font-bold text-foreground mb-3">Quotes and Proposals</h3>
               <p className="text-foreground/80 leading-relaxed mb-4">
@@ -95,7 +95,7 @@ export function TermsOfServicePage() {
             {/* Payment Terms */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Payment Terms</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
 
               <h3 className="text-xl font-bold text-foreground mb-3">Deposit</h3>
               <p className="text-foreground/80 leading-relaxed mb-4">
@@ -131,7 +131,7 @@ export function TermsOfServicePage() {
             {/* Cancellations and Changes */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Cancellations and Changes</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
 
               <h3 className="text-xl font-bold text-foreground mb-3">Client Cancellations</h3>
               <ul className="list-disc pl-6 mb-6 text-foreground/80 space-y-2">
@@ -157,7 +157,7 @@ export function TermsOfServicePage() {
             {/* Food Safety and Dietary Requirements */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Food Safety and Dietary Requirements</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
 
               <h3 className="text-xl font-bold text-foreground mb-3">Food Safety Standards</h3>
               <p className="text-foreground/80 leading-relaxed mb-4">
@@ -182,7 +182,7 @@ export function TermsOfServicePage() {
             {/* Venue Access and Requirements */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Venue Access and Requirements</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 The client is responsible for:
               </p>
@@ -198,7 +198,7 @@ export function TermsOfServicePage() {
             {/* Liability */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Limitation of Liability</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 To the fullest extent permitted by law:
               </p>
@@ -217,7 +217,7 @@ export function TermsOfServicePage() {
             {/* Intellectual Property */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Intellectual Property</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 All content on our website, including text, graphics, logos, images, and software, is the property of
                 MYWAY Catering and is protected by copyright and other intellectual property laws. You may not use,
@@ -232,7 +232,7 @@ export function TermsOfServicePage() {
             {/* User Conduct */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">User Conduct</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 You agree not to:
               </p>
@@ -248,7 +248,7 @@ export function TermsOfServicePage() {
             {/* Governing Law */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Governing Law and Disputes</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 These Terms shall be governed by and construed in accordance with the laws of England and Wales. Any
                 disputes arising from these Terms or our services shall be subject to the exclusive jurisdiction of the
@@ -262,7 +262,7 @@ export function TermsOfServicePage() {
             {/* Changes to Terms */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Changes to Terms</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed">
                 We reserve the right to modify these Terms at any time. We will notify you of material changes by posting
                 the updated Terms on our website with a new "Last updated" date. Your continued use of our services after
@@ -273,7 +273,7 @@ export function TermsOfServicePage() {
             {/* Severability */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Severability</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed">
                 If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited
                 or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force
@@ -284,19 +284,19 @@ export function TermsOfServicePage() {
             {/* Contact Information */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Contact Us</h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+              <div className="h-1 w-20 bg-earthy-green mb-6"></div>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 If you have any questions about these Terms of Service, please contact us:
               </p>
               <div className="bg-slate-100 p-6 rounded-lg">
                 <p className="text-foreground font-semibold mb-2">MYWAY Catering</p>
-                <p className="text-foreground/80">Email: <a href="mailto:mariam@mywaycatering.com" className="text-emerald-700 hover:text-emerald-600">mariam@mywaycatering.com</a></p>
-                <p className="text-foreground/80">Phone: <a href="tel:+4471961032314" className="text-emerald-700 hover:text-emerald-600">+44 7196 103 2314</a></p>
+                <p className="text-foreground/80">Email: <a href="mailto:mariam@mywaycatering.com" className="text-earthy-green hover:text-earthy-green-dark">mariam@mywaycatering.com</a></p>
+                <p className="text-foreground/80">Phone: <a href="tel:+4471961032314" className="text-earthy-green hover:text-earthy-green-dark">+44 7196 103 2314</a></p>
               </div>
             </div>
 
             {/* Acceptance */}
-            <div className="mb-12 bg-emerald-50 p-6 rounded-lg border-l-4 border-emerald-700">
+            <div className="mb-12 bg-earthy-green-50 p-6 rounded-lg border-l-4 border-earthy-green">
               <p className="text-foreground font-semibold mb-2">Acceptance of Terms</p>
               <p className="text-foreground/80 leading-relaxed">
                 By using our website or services, you acknowledge that you have read, understood, and agree to be bound

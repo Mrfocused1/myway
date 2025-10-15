@@ -136,7 +136,7 @@ export function MenuPage() {
                 placeholder="Search menu items..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-6 py-3 pl-12 rounded-lg border-2 border-emerald-700 bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700"
+                className="w-full px-6 py-3 pl-12 rounded-lg border-2 border-earthy-green bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green focus:border-earthy-green"
               />
               <svg
                 className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground"
@@ -159,7 +159,7 @@ export function MenuPage() {
                 id="cuisine-select"
                 value={selectedCuisine}
                 onChange={(e) => setSelectedCuisine(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border-2 border-emerald-700 bg-white text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700 appearance-none cursor-pointer"
+                className="w-full px-4 py-3 rounded-lg border-2 border-earthy-green bg-white text-foreground focus:outline-none focus:ring-2 focus:ring-earthy-green focus:border-earthy-green appearance-none cursor-pointer"
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23374151' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
                   backgroundRepeat: 'no-repeat',
@@ -186,7 +186,7 @@ export function MenuPage() {
                     onClick={() => setSelectedCategory(category)}
                     className={`px-6 py-2 rounded-full font-medium text-sm transition-colors whitespace-nowrap ${
                       selectedCategory === category
-                        ? 'bg-emerald-700 text-white'
+                        ? 'bg-earthy-green text-white'
                         : 'bg-secondary text-foreground hover:bg-secondary/80'
                     }`}
                   >
@@ -205,7 +205,7 @@ export function MenuPage() {
           {/* Loading State */}
           {loading ? (
             <div className="text-center py-12">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-700"></div>
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-earthy-green"></div>
               <p className="mt-4 text-foreground">Loading menu items...</p>
             </div>
           ) : Object.keys(groupedItems).length > 0 ? (
@@ -218,7 +218,7 @@ export function MenuPage() {
                     {/* Cuisine Header */}
                     <div className="mb-12">
                       <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase mb-3">{cuisine} Cuisine</h2>
-                      <div className="h-1 w-24 bg-emerald-700"></div>
+                      <div className="h-1 w-24 bg-earthy-green"></div>
                     </div>
 
                     {/* Categories within this cuisine */}
@@ -230,7 +230,7 @@ export function MenuPage() {
                             {/* Category Sub-Header */}
                             <div className="mb-6">
                               <h3 className="text-2xl font-bold text-foreground uppercase mb-2">{category}</h3>
-                              <div className="h-0.5 w-16 bg-emerald-700/60"></div>
+                              <div className="h-0.5 w-16 bg-earthy-green/60"></div>
                             </div>
 
                             {/* Category Items Grid */}
@@ -299,7 +299,7 @@ export function MenuPage() {
           </p>
           <a
             href="#contact"
-            className="inline-block bg-emerald-700 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-emerald-600 transition-all hover:scale-105"
+            className="inline-block bg-earthy-green text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-earthy-green-dark transition-all hover:scale-105"
           >
             Get a Quote
           </a>
@@ -312,7 +312,7 @@ export function MenuPage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-emerald-700 text-white p-4 rounded-full shadow-lg hover:bg-emerald-600 transition-all hover:scale-110 z-50"
+          className="fixed bottom-8 right-8 bg-earthy-green text-white p-4 rounded-full shadow-lg hover:bg-earthy-green-dark transition-all hover:scale-110 z-50"
           aria-label="Scroll to top"
         >
           <svg

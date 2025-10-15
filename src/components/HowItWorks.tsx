@@ -40,7 +40,7 @@ export function HowItWorks() {
             How It Works
           </motion.h2>
           <motion.div
-            className="h-1 w-20 bg-emerald-700 mx-auto mb-6"
+            className="h-1 w-20 bg-earthy-green mx-auto mb-6"
             initial={{ opacity: 0, scaleX: 0 }}
             whileInView={{ opacity: 1, scaleX: 1 }}
             viewport={{ once: true }}
@@ -70,13 +70,13 @@ export function HowItWorks() {
             >
               {/* Connector Line (hidden on mobile, shown on larger screens) */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-16 left-[60%] w-full h-0.5 bg-emerald-700/20 -z-10" />
+                <div className="hidden lg:block absolute top-16 left-[60%] w-full h-0.5 bg-earthy-green/20 -z-10" />
               )}
 
               {/* Step Card */}
               <div className="relative bg-background border border-border rounded-2xl p-6 hover:shadow-lg transition-shadow h-full flex flex-col">
                 {/* Step Number Circle */}
-                <div className="absolute -top-4 left-6 w-12 h-12 rounded-full bg-emerald-700 flex items-center justify-center shadow-lg">
+                <div className="absolute -top-4 left-6 w-12 h-12 rounded-full bg-earthy-green flex items-center justify-center shadow-lg">
                   <span className="text-white font-bold text-xl">{step.number}</span>
                 </div>
 
@@ -104,7 +104,7 @@ export function HowItWorks() {
         >
           <a
             href="/about#contact"
-            className="inline-block bg-emerald-700 text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:bg-emerald-600 transition-all hover:scale-105"
+            className="inline-block bg-earthy-green text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:bg-earthy-green-dark transition-all hover:scale-105"
           >
             Get Started Today
           </a>
