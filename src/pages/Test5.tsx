@@ -1,5 +1,5 @@
-// TEST PAGE 5: Logo and Scrolling Text Absolute, Content in Flow
-// Logo absolutely positioned at top, scrolling text absolutely positioned at bottom, content stays in flow
+// TEST PAGE 5: Mixed Absolute + Relative Positioning
+// Logo absolute at top, scrolling absolute at bottom, content relative centered
 
 import { ScrollVelocity } from '../components/ScrollVelocity'
 import { Navigation } from '../components/Navigation'
@@ -60,7 +60,7 @@ function Test5() {
         ]}
       />
 
-      {/* Hero Section - Mixed: Absolute + Flow */}
+      {/* Hero Section */}
       <motion.section
         className={cn(
           "relative w-full overflow-hidden bg-background text-foreground pt-40 sm:pt-48 md:pt-0 md:h-[700px]"
@@ -70,14 +70,14 @@ function Test5() {
         variants={containerVariants}
       >
         {/* Container for relative positioning */}
-        <div className="relative p-8 md:w-1/2 md:h-[700px] md:p-12 lg:w-3/5 lg:p-16">
-          {/* Logo at TOP - Absolute */}
-          <motion.div className="md:absolute md:top-12 md:left-12 lg:top-16 lg:left-16" variants={itemVariants}>
+        <div className="relative p-8 md:w-1/2 md:h-[700px] md:p-0 lg:w-3/5">
+          {/* Logo at TOP - Absolute, same height as menu */}
+          <motion.div className="md:absolute md:top-8 md:left-12 lg:left-16" variants={itemVariants}>
             <img src="/myway-logo.svg" alt="MYWAY CATERING Logo" className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
           </motion.div>
 
-          {/* Content in MIDDLE - In Flow, centered vertically */}
-          <div className="md:absolute md:top-1/2 md:-translate-y-1/2 md:left-12 md:right-12 lg:left-16 lg:right-16">
+          {/* Content in MIDDLE - Absolute, centered */}
+          <div className="mt-8 md:mt-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-12 md:right-12 lg:left-16 lg:right-16">
             <motion.main variants={containerVariants}>
               <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
                 Myway Catering
@@ -95,7 +95,7 @@ function Test5() {
           </div>
 
           {/* Scrolling text at BOTTOM - Absolute */}
-          <motion.footer className="mt-12 md:absolute md:bottom-12 md:left-12 md:right-12 md:mt-0 lg:bottom-16 lg:left-16 lg:right-16" variants={itemVariants}>
+          <motion.footer className="mt-12 md:mt-0 md:absolute md:bottom-8 md:left-12 md:right-12 lg:left-16 lg:right-16" variants={itemVariants}>
             <ScrollVelocity velocity={2} className="text-xs">
               {[
                 <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
@@ -137,7 +137,7 @@ function Test5() {
 
       <div className="py-20 text-center">
         <h2 className="text-3xl font-bold mb-4">Test Page 5</h2>
-        <p className="text-lg text-muted-foreground">Logo and scrolling text absolute, content in flow (centered)</p>
+        <p className="text-lg text-muted-foreground">Logo and scrolling absolute (top-8, bottom-8), content centered</p>
       </div>
 
       <Footer />

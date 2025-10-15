@@ -1,5 +1,5 @@
-// TEST PAGE 6: Grid with minmax Row Heights
-// Uses CSS Grid with specific row sizing to control spacing
+// TEST PAGE 6: Grid with fractional units and justify-items
+// Logo at top, content centered with flex, scrolling at bottom
 
 import { ScrollVelocity } from '../components/ScrollVelocity'
 import { Navigation } from '../components/Navigation'
@@ -60,7 +60,7 @@ function Test6() {
         ]}
       />
 
-      {/* Hero Section - CSS Grid with minmax */}
+      {/* Hero Section */}
       <motion.section
         className={cn(
           "relative w-full overflow-hidden bg-background text-foreground pt-40 sm:pt-48 md:pt-0"
@@ -69,15 +69,15 @@ function Test6() {
         animate="visible"
         variants={containerVariants}
       >
-        {/* Grid Container with minmax row heights */}
-        <div className="grid grid-cols-1 p-8 md:absolute md:top-0 md:left-0 md:w-1/2 md:h-[700px] md:p-12 md:grid-rows-[minmax(auto,200px)_1fr_minmax(auto,100px)] lg:w-3/5 lg:p-16">
-          {/* Logo at TOP - Row 1 with minmax */}
-          <motion.div className="flex items-start" variants={itemVariants}>
+        {/* Grid Container */}
+        <div className="grid grid-cols-1 p-8 min-h-screen md:min-h-0 md:h-[700px] md:w-1/2 md:grid-rows-[180px_1fr_auto] md:p-0 lg:w-3/5">
+          {/* Logo at TOP - Row 1 with fixed height */}
+          <motion.div className="flex items-start md:pt-8 md:px-12 lg:px-16" variants={itemVariants}>
             <img src="/myway-logo.svg" alt="MYWAY CATERING Logo" className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
           </motion.div>
 
           {/* Content in MIDDLE - Row 2 (1fr expands) */}
-          <div className="flex items-center">
+          <div className="flex items-center md:px-12 lg:px-16">
             <motion.main variants={containerVariants}>
               <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
                 Myway Catering
@@ -94,8 +94,8 @@ function Test6() {
             </motion.main>
           </div>
 
-          {/* Scrolling text at BOTTOM - Row 3 with minmax */}
-          <motion.footer className="w-full flex items-end" variants={itemVariants}>
+          {/* Scrolling text at BOTTOM - Row 3 */}
+          <motion.footer className="w-full md:pb-8 md:px-12 lg:px-16" variants={itemVariants}>
             <ScrollVelocity velocity={2} className="text-xs">
               {[
                 <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
@@ -137,7 +137,7 @@ function Test6() {
 
       <div className="py-20 text-center">
         <h2 className="text-3xl font-bold mb-4">Test Page 6</h2>
-        <p className="text-lg text-muted-foreground">Grid with minmax row heights (minmax(auto,200px) 1fr minmax(auto,100px))</p>
+        <p className="text-lg text-muted-foreground">Grid with fixed logo row (180px 1fr auto)</p>
       </div>
 
       <Footer />

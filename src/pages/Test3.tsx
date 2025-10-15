@@ -1,5 +1,5 @@
-// TEST PAGE 3: CSS Grid with 3 Rows (auto 1fr auto)
-// Logo in row 1, content in row 2, scrolling text in row 3
+// TEST PAGE 3: CSS Grid with specific row heights
+// Logo at top (menu height), content centered, scrolling at bottom
 
 import { ScrollVelocity } from '../components/ScrollVelocity'
 import { Navigation } from '../components/Navigation'
@@ -60,7 +60,7 @@ function Test3() {
         ]}
       />
 
-      {/* Hero Section - CSS Grid 3 Rows */}
+      {/* Hero Section */}
       <motion.section
         className={cn(
           "relative w-full overflow-hidden bg-background text-foreground pt-40 sm:pt-48 md:pt-0"
@@ -69,15 +69,15 @@ function Test3() {
         animate="visible"
         variants={containerVariants}
       >
-        {/* Grid Container with 3 rows: auto 1fr auto */}
-        <div className="grid grid-cols-1 grid-rows-[auto_1fr_auto] p-8 md:absolute md:top-0 md:left-0 md:w-1/2 md:h-[700px] md:p-12 lg:w-3/5 lg:p-16">
-          {/* Logo at TOP - Row 1 */}
-          <motion.div variants={itemVariants}>
+        {/* Grid Container with specific row heights */}
+        <div className="grid grid-cols-1 p-8 min-h-screen md:min-h-0 md:h-[700px] md:w-1/2 md:grid-rows-[auto_1fr_auto] md:p-0 lg:w-3/5">
+          {/* Logo at TOP - Row 1, with top padding to match menu */}
+          <motion.div className="md:pt-8 md:px-12 lg:px-16" variants={itemVariants}>
             <img src="/myway-logo.svg" alt="MYWAY CATERING Logo" className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
           </motion.div>
 
-          {/* Content in MIDDLE - Row 2 (1fr expands to fill space) */}
-          <div className="flex items-center">
+          {/* Content in MIDDLE - Row 2, centered vertically */}
+          <div className="flex items-center md:px-12 lg:px-16">
             <motion.main variants={containerVariants}>
               <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
                 Myway Catering
@@ -95,7 +95,7 @@ function Test3() {
           </div>
 
           {/* Scrolling text at BOTTOM - Row 3 */}
-          <motion.footer className="w-full" variants={itemVariants}>
+          <motion.footer className="w-full md:pb-8 md:px-12 lg:px-16" variants={itemVariants}>
             <ScrollVelocity velocity={2} className="text-xs">
               {[
                 <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
@@ -137,7 +137,7 @@ function Test3() {
 
       <div className="py-20 text-center">
         <h2 className="text-3xl font-bold mb-4">Test Page 3</h2>
-        <p className="text-lg text-muted-foreground">CSS Grid with 3 rows (auto 1fr auto)</p>
+        <p className="text-lg text-muted-foreground">CSS Grid with 3 rows (auto 1fr auto) and padding</p>
       </div>
 
       <Footer />

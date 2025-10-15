@@ -1,5 +1,5 @@
-// TEST PAGE 1: Flexbox Column with justify-between
-// Logo at top, content in middle, scrolling text at bottom
+// TEST PAGE 1: Flexbox with explicit spacing
+// Logo at top (menu height), content centered, scrolling at bottom
 
 import { ScrollVelocity } from '../components/ScrollVelocity'
 import { Navigation } from '../components/Navigation'
@@ -60,7 +60,7 @@ function Test1() {
         ]}
       />
 
-      {/* Hero Section - Flexbox with justify-between */}
+      {/* Hero Section */}
       <motion.section
         className={cn(
           "relative w-full overflow-hidden bg-background text-foreground pt-40 sm:pt-48 md:pt-0"
@@ -69,15 +69,18 @@ function Test1() {
         animate="visible"
         variants={containerVariants}
       >
-        {/* Flexbox Container with justify-between */}
-        <div className="flex flex-col p-8 md:absolute md:top-0 md:left-0 md:w-1/2 md:h-[700px] md:justify-between md:p-12 lg:w-3/5 lg:p-16">
-          {/* Logo at TOP */}
-          <motion.div variants={itemVariants}>
+        {/* Flexbox Container */}
+        <div className="flex flex-col p-8 min-h-screen md:min-h-0 md:h-[700px] md:w-1/2 lg:w-3/5">
+          {/* Logo at TOP - Same height as menu */}
+          <motion.div className="md:pt-8 md:px-12 lg:px-16" variants={itemVariants}>
             <img src="/myway-logo.svg" alt="MYWAY CATERING Logo" className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
           </motion.div>
 
+          {/* Spacer */}
+          <div className="md:flex-1"></div>
+
           {/* Content in MIDDLE */}
-          <div>
+          <div className="md:px-12 lg:px-16">
             <motion.main variants={containerVariants}>
               <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
                 Myway Catering
@@ -94,8 +97,11 @@ function Test1() {
             </motion.main>
           </div>
 
+          {/* Spacer */}
+          <div className="md:flex-1"></div>
+
           {/* Scrolling text at BOTTOM */}
-          <motion.footer className="w-full" variants={itemVariants}>
+          <motion.footer className="mt-12 md:mt-0 md:pb-8 md:px-12 lg:px-16 w-full" variants={itemVariants}>
             <ScrollVelocity velocity={2} className="text-xs">
               {[
                 <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
@@ -137,7 +143,7 @@ function Test1() {
 
       <div className="py-20 text-center">
         <h2 className="text-3xl font-bold mb-4">Test Page 1</h2>
-        <p className="text-lg text-muted-foreground">Flexbox column with justify-between</p>
+        <p className="text-lg text-muted-foreground">Flexbox with explicit spacing and flex-1 spacers</p>
       </div>
 
       <Footer />

@@ -1,5 +1,5 @@
-// TEST PAGE 2: Absolute Positioning for All Three Sections
-// Logo at top (absolute), content in middle (absolute), scrolling text at bottom (absolute)
+// TEST PAGE 2: All Absolute Positioning
+// Logo at top (menu height), content centered, scrolling at bottom
 
 import { ScrollVelocity } from '../components/ScrollVelocity'
 import { Navigation } from '../components/Navigation'
@@ -60,7 +60,7 @@ function Test2() {
         ]}
       />
 
-      {/* Hero Section - All Absolute Positioning */}
+      {/* Hero Section */}
       <motion.section
         className={cn(
           "relative w-full overflow-hidden bg-background text-foreground pt-40 sm:pt-48 md:pt-0 md:h-[700px]"
@@ -69,12 +69,12 @@ function Test2() {
         animate="visible"
         variants={containerVariants}
       >
-        {/* Logo at TOP - Absolute */}
-        <motion.div className="p-8 md:absolute md:top-12 md:left-12 md:p-0 lg:top-16 lg:left-16" variants={itemVariants}>
+        {/* Logo at TOP - Absolute, same height as menu */}
+        <motion.div className="p-8 md:absolute md:top-8 md:left-12 md:p-0 lg:left-16" variants={itemVariants}>
           <img src="/myway-logo.svg" alt="MYWAY CATERING Logo" className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
         </motion.div>
 
-        {/* Content in MIDDLE - Absolute */}
+        {/* Content in MIDDLE - Absolute, centered */}
         <div className="p-8 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-12 md:p-0 md:max-w-[45%] lg:left-16 lg:max-w-[55%]">
           <motion.main variants={containerVariants}>
             <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
@@ -93,7 +93,7 @@ function Test2() {
         </div>
 
         {/* Scrolling text at BOTTOM - Absolute */}
-        <motion.footer className="p-8 md:absolute md:bottom-12 md:left-12 md:right-[50%] md:p-0 lg:bottom-16 lg:left-16 lg:right-[40%]" variants={itemVariants}>
+        <motion.footer className="p-8 md:absolute md:bottom-8 md:left-12 md:right-[50%] md:p-0 lg:left-16 lg:right-[40%]" variants={itemVariants}>
           <ScrollVelocity velocity={2} className="text-xs">
             {[
               <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
@@ -134,7 +134,7 @@ function Test2() {
 
       <div className="py-20 text-center">
         <h2 className="text-3xl font-bold mb-4">Test Page 2</h2>
-        <p className="text-lg text-muted-foreground">All sections absolutely positioned (top, middle, bottom)</p>
+        <p className="text-lg text-muted-foreground">All sections absolutely positioned (top-8, centered, bottom-8)</p>
       </div>
 
       <Footer />
