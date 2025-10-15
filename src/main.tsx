@@ -20,12 +20,6 @@ import Test3 from './pages/Test3.tsx'
 import Test4 from './pages/Test4.tsx'
 import Test5 from './pages/Test5.tsx'
 import Test6 from './pages/Test6.tsx'
-import Test7 from './pages/Test7.tsx'
-import Test8 from './pages/Test8.tsx'
-import Test9 from './pages/Test9.tsx'
-import Test10 from './pages/Test10.tsx'
-import Test11 from './pages/Test11.tsx'
-import Test12 from './pages/Test12.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -56,12 +50,6 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/4" element={<Test4 />} />
           <Route path="/5" element={<Test5 />} />
           <Route path="/6" element={<Test6 />} />
-          <Route path="/7" element={<Test7 />} />
-          <Route path="/8" element={<Test8 />} />
-          <Route path="/9" element={<Test9 />} />
-          <Route path="/10" element={<Test10 />} />
-          <Route path="/11" element={<Test11 />} />
-          <Route path="/12" element={<Test12 />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

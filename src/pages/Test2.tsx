@@ -1,5 +1,5 @@
-// TEST PAGE 2: Absolute positioning + Explicit top positioning
-// Approach: Logo absolute, content also gets explicit top value
+// TEST PAGE 2: Absolute Positioning for All Three Sections
+// Logo at top (absolute), content in middle (absolute), scrolling text at bottom (absolute)
 
 import { ScrollVelocity } from '../components/ScrollVelocity'
 import { Navigation } from '../components/Navigation'
@@ -60,54 +60,52 @@ function Test2() {
         ]}
       />
 
-      {/* Hero Section - Approach 2 */}
+      {/* Hero Section - All Absolute Positioning */}
       <motion.section
         className={cn(
-          "relative flex w-full flex-col overflow-hidden bg-background text-foreground md:flex-row pt-40 sm:pt-48 md:pt-56 lg:pt-64"
+          "relative w-full overflow-hidden bg-background text-foreground pt-40 sm:pt-48 md:pt-0 md:h-[700px]"
         )}
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        {/* Left Side: Content */}
-        <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 md:pt-[63px] lg:w-3/5 lg:p-16 lg:pt-[79px] md:relative">
-          {/* Logo - Absolutely Positioned at Top */}
-          <motion.div className="mb-4 md:mb-0 md:absolute md:top-12 md:left-12 lg:top-16 lg:left-16" variants={itemVariants}>
-            <img src="/myway-logo.svg" alt="MYWAY CATERING Logo" className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
-          </motion.div>
+        {/* Logo at TOP - Absolute */}
+        <motion.div className="p-8 md:absolute md:top-12 md:left-12 md:p-0 lg:top-16 lg:left-16" variants={itemVariants}>
+          <img src="/myway-logo.svg" alt="MYWAY CATERING Logo" className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
+        </motion.div>
 
-          {/* Content Container - EXPLICITLY POSITIONED */}
-          <div className="md:absolute md:top-[200px] md:left-12 lg:top-[220px] lg:left-16">
-            <motion.main variants={containerVariants}>
-              <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
-                Myway Catering
-                <br />
-                Catering Your Way
-              </motion.h1>
-              <motion.div className="my-6 h-1 w-20 bg-emerald-700" variants={itemVariants}></motion.div>
-              <motion.p className="mb-8 max-w-md text-base text-black hidden md:block" variants={itemVariants}>
-                Welcome to Myway Catering, where exceptional culinary experiences meet personalised service. We take pride in crafting delicious meals tailored to your unique events.
-              </motion.p>
-              <motion.a href="/about#contact" className="text-lg font-bold tracking-widest text-emerald-700 transition-colors hover:text-emerald-600" variants={itemVariants}>
-                REQUEST A QUOTE →
-              </motion.a>
-            </motion.main>
-
-            <motion.footer className="mt-12 w-full" variants={itemVariants}>
-              <ScrollVelocity velocity={2} className="text-xs">
-                {[
-                  <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
-                  <span key="item2">Corporate Events • Weddings • Private Celebrations</span>,
-                  <span key="item3">Fresh Ingredients • Authentic Recipes • Professional Service</span>,
-                  <span key="item4">+44 7196 103 2314 • mariam@mywaycatering.com</span>,
-                ]}
-              </ScrollVelocity>
-            </motion.footer>
-          </div>
+        {/* Content in MIDDLE - Absolute */}
+        <div className="p-8 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-12 md:p-0 md:max-w-[45%] lg:left-16 lg:max-w-[55%]">
+          <motion.main variants={containerVariants}>
+            <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
+              Myway Catering
+              <br />
+              Catering Your Way
+            </motion.h1>
+            <motion.div className="my-6 h-1 w-20 bg-emerald-700" variants={itemVariants}></motion.div>
+            <motion.p className="mb-8 max-w-md text-base text-black hidden md:block" variants={itemVariants}>
+              Welcome to Myway Catering, where exceptional culinary experiences meet personalised service. We take pride in crafting delicious meals tailored to your unique events.
+            </motion.p>
+            <motion.a href="/about#contact" className="text-lg font-bold tracking-widest text-emerald-700 transition-colors hover:text-emerald-600" variants={itemVariants}>
+              REQUEST A QUOTE →
+            </motion.a>
+          </motion.main>
         </div>
 
+        {/* Scrolling text at BOTTOM - Absolute */}
+        <motion.footer className="p-8 md:absolute md:bottom-12 md:left-12 md:right-[50%] md:p-0 lg:bottom-16 lg:left-16 lg:right-[40%]" variants={itemVariants}>
+          <ScrollVelocity velocity={2} className="text-xs">
+            {[
+              <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
+              <span key="item2">Corporate Events • Weddings • Private Celebrations</span>,
+              <span key="item3">Fresh Ingredients • Authentic Recipes • Professional Service</span>,
+              <span key="item4">+44 7196 103 2314 • mariam@mywaycatering.com</span>,
+            ]}
+          </ScrollVelocity>
+        </motion.footer>
+
         {/* Right Side: Image Slider */}
-        <div className="relative w-full min-h-[300px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[600px] lg:w-2/5 lg:h-[700px] overflow-hidden">
+        <div className="relative w-full min-h-[300px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[700px] lg:w-2/5 overflow-hidden">
           {backgroundImages.map((image, index) => (
             <motion.div
               key={image}
@@ -136,7 +134,7 @@ function Test2() {
 
       <div className="py-20 text-center">
         <h2 className="text-3xl font-bold mb-4">Test Page 2</h2>
-        <p className="text-lg text-muted-foreground">Approach: Absolute positioning + Explicit top positioning (top-[200px])</p>
+        <p className="text-lg text-muted-foreground">All sections absolutely positioned (top, middle, bottom)</p>
       </div>
 
       <Footer />

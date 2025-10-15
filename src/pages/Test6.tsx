@@ -1,5 +1,5 @@
-// TEST PAGE 6: Transform/Translate Approach
-// Approach: Use CSS transforms instead of margins
+// TEST PAGE 6: Grid with minmax Row Heights
+// Uses CSS Grid with specific row sizing to control spacing
 
 import { ScrollVelocity } from '../components/ScrollVelocity'
 import { Navigation } from '../components/Navigation'
@@ -60,41 +60,24 @@ function Test6() {
         ]}
       />
 
-      {/* Hero Section - Approach 6: TRANSFORM/TRANSLATE */}
+      {/* Hero Section - CSS Grid with minmax */}
       <motion.section
         className={cn(
-          "relative flex w-full flex-col overflow-hidden bg-background text-foreground md:flex-row pt-40 sm:pt-48 md:pt-56 lg:pt-64"
+          "relative w-full overflow-hidden bg-background text-foreground pt-40 sm:pt-48 md:pt-0"
         )}
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        {/* Left Side: Content */}
-        <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 md:pt-[63px] lg:w-3/5 lg:p-16 lg:pt-[79px]">
-          {/* Logo - Using transform translate */}
-          <motion.div
-            className="mb-4"
-            style={{
-              transform: 'translateY(0)',
-            }}
-            variants={{
-              ...itemVariants,
-              visible: {
-                ...itemVariants.visible,
-                transform: window.innerWidth >= 768 ? 'translateY(-120px)' : 'translateY(0)',
-              }
-            }}
-          >
+        {/* Grid Container with minmax row heights */}
+        <div className="grid grid-cols-1 p-8 md:absolute md:top-0 md:left-0 md:w-1/2 md:h-[700px] md:p-12 md:grid-rows-[minmax(auto,200px)_1fr_minmax(auto,100px)] lg:w-3/5 lg:p-16">
+          {/* Logo at TOP - Row 1 with minmax */}
+          <motion.div className="flex items-start" variants={itemVariants}>
             <img src="/myway-logo.svg" alt="MYWAY CATERING Logo" className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
           </motion.div>
 
-          {/* Content - Also using transform */}
-          <div
-            style={{
-              transform: 'translateY(0)',
-            }}
-            className="md:transform md:-translate-y-[180px]"
-          >
+          {/* Content in MIDDLE - Row 2 (1fr expands) */}
+          <div className="flex items-center">
             <motion.main variants={containerVariants}>
               <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
                 Myway Catering
@@ -109,22 +92,23 @@ function Test6() {
                 REQUEST A QUOTE →
               </motion.a>
             </motion.main>
-
-            <motion.footer className="mt-12 w-full" variants={itemVariants}>
-              <ScrollVelocity velocity={2} className="text-xs">
-                {[
-                  <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
-                  <span key="item2">Corporate Events • Weddings • Private Celebrations</span>,
-                  <span key="item3">Fresh Ingredients • Authentic Recipes • Professional Service</span>,
-                  <span key="item4">+44 7196 103 2314 • mariam@mywaycatering.com</span>,
-                ]}
-              </ScrollVelocity>
-            </motion.footer>
           </div>
+
+          {/* Scrolling text at BOTTOM - Row 3 with minmax */}
+          <motion.footer className="w-full flex items-end" variants={itemVariants}>
+            <ScrollVelocity velocity={2} className="text-xs">
+              {[
+                <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
+                <span key="item2">Corporate Events • Weddings • Private Celebrations</span>,
+                <span key="item3">Fresh Ingredients • Authentic Recipes • Professional Service</span>,
+                <span key="item4">+44 7196 103 2314 • mariam@mywaycatering.com</span>,
+              ]}
+            </ScrollVelocity>
+          </motion.footer>
         </div>
 
         {/* Right Side: Image Slider */}
-        <div className="relative w-full min-h-[300px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[600px] lg:w-2/5 lg:h-[700px] overflow-hidden">
+        <div className="relative w-full min-h-[300px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[700px] lg:w-2/5 overflow-hidden">
           {backgroundImages.map((image, index) => (
             <motion.div
               key={image}
@@ -153,7 +137,7 @@ function Test6() {
 
       <div className="py-20 text-center">
         <h2 className="text-3xl font-bold mb-4">Test Page 6</h2>
-        <p className="text-lg text-muted-foreground">Approach: CSS Transform/Translate instead of margins</p>
+        <p className="text-lg text-muted-foreground">Grid with minmax row heights (minmax(auto,200px) 1fr minmax(auto,100px))</p>
       </div>
 
       <Footer />

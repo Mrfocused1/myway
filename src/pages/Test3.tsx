@@ -1,5 +1,5 @@
-// TEST PAGE 3: Grid Layout
-// Approach: Use CSS Grid instead of Flexbox
+// TEST PAGE 3: CSS Grid with 3 Rows (auto 1fr auto)
+// Logo in row 1, content in row 2, scrolling text in row 3
 
 import { ScrollVelocity } from '../components/ScrollVelocity'
 import { Navigation } from '../components/Navigation'
@@ -60,24 +60,24 @@ function Test3() {
         ]}
       />
 
-      {/* Hero Section - Approach 3: GRID LAYOUT */}
+      {/* Hero Section - CSS Grid 3 Rows */}
       <motion.section
         className={cn(
-          "relative w-full overflow-hidden bg-background text-foreground pt-40 sm:pt-48 md:pt-56 lg:pt-64"
+          "relative w-full overflow-hidden bg-background text-foreground pt-40 sm:pt-48 md:pt-0"
         )}
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        {/* Left Side: Using Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] md:grid-rows-[auto_1fr_auto] gap-4 p-8 md:w-1/2 md:p-12 lg:w-3/5 lg:p-16">
-          {/* Logo - Grid positioned */}
-          <motion.div className="md:col-span-2" variants={itemVariants}>
+        {/* Grid Container with 3 rows: auto 1fr auto */}
+        <div className="grid grid-cols-1 grid-rows-[auto_1fr_auto] p-8 md:absolute md:top-0 md:left-0 md:w-1/2 md:h-[700px] md:p-12 lg:w-3/5 lg:p-16">
+          {/* Logo at TOP - Row 1 */}
+          <motion.div variants={itemVariants}>
             <img src="/myway-logo.svg" alt="MYWAY CATERING Logo" className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
           </motion.div>
 
-          {/* Content - Grid positioned */}
-          <div className="md:col-span-2">
+          {/* Content in MIDDLE - Row 2 (1fr expands to fill space) */}
+          <div className="flex items-center">
             <motion.main variants={containerVariants}>
               <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
                 Myway Catering
@@ -94,8 +94,8 @@ function Test3() {
             </motion.main>
           </div>
 
-          {/* Scrolling text - Grid positioned */}
-          <motion.footer className="md:col-span-2 w-full" variants={itemVariants}>
+          {/* Scrolling text at BOTTOM - Row 3 */}
+          <motion.footer className="w-full" variants={itemVariants}>
             <ScrollVelocity velocity={2} className="text-xs">
               {[
                 <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
@@ -108,7 +108,7 @@ function Test3() {
         </div>
 
         {/* Right Side: Image Slider */}
-        <div className="relative w-full min-h-[300px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[600px] lg:w-2/5 lg:h-[700px] overflow-hidden">
+        <div className="relative w-full min-h-[300px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[700px] lg:w-2/5 overflow-hidden">
           {backgroundImages.map((image, index) => (
             <motion.div
               key={image}
@@ -137,7 +137,7 @@ function Test3() {
 
       <div className="py-20 text-center">
         <h2 className="text-3xl font-bold mb-4">Test Page 3</h2>
-        <p className="text-lg text-muted-foreground">Approach: CSS Grid layout instead of Flexbox</p>
+        <p className="text-lg text-muted-foreground">CSS Grid with 3 rows (auto 1fr auto)</p>
       </div>
 
       <Footer />

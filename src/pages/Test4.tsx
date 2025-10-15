@@ -1,5 +1,5 @@
-// TEST PAGE 4: Both Logo and Content Absolutely Positioned
-// Approach: Remove both from flow, position independently
+// TEST PAGE 4: Flexbox Column with margin-top: auto
+// Logo at top, content in middle, scrolling text pushed to bottom with margin-top: auto
 
 import { ScrollVelocity } from '../components/ScrollVelocity'
 import { Navigation } from '../components/Navigation'
@@ -60,24 +60,24 @@ function Test4() {
         ]}
       />
 
-      {/* Hero Section - Approach 4: BOTH ABSOLUTELY POSITIONED */}
+      {/* Hero Section - Flexbox with margin-top: auto */}
       <motion.section
         className={cn(
-          "relative w-full overflow-hidden bg-background text-foreground pt-40 sm:pt-48 md:pt-56 lg:pt-64 md:h-[700px]"
+          "relative w-full overflow-hidden bg-background text-foreground pt-40 sm:pt-48 md:pt-0"
         )}
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        {/* Container just for positioning context */}
-        <div className="relative w-full h-full md:w-1/2 lg:w-3/5">
-          {/* Logo - Absolutely Positioned at Top */}
-          <motion.div className="mb-4 md:mb-0 md:absolute md:top-[64px] md:left-12 lg:left-16" variants={itemVariants}>
+        {/* Flexbox Container */}
+        <div className="flex flex-col p-8 md:absolute md:top-0 md:left-0 md:w-1/2 md:h-[700px] md:p-12 lg:w-3/5 lg:p-16">
+          {/* Logo at TOP */}
+          <motion.div variants={itemVariants}>
             <img src="/myway-logo.svg" alt="MYWAY CATERING Logo" className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
           </motion.div>
 
-          {/* Content - ALSO Absolutely Positioned (matching Position A visual location) */}
-          <div className="md:absolute md:top-[220px] md:left-12 lg:left-16 p-8 md:p-0">
+          {/* Content in MIDDLE */}
+          <div className="mt-8">
             <motion.main variants={containerVariants}>
               <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
                 Myway Catering
@@ -92,22 +92,23 @@ function Test4() {
                 REQUEST A QUOTE →
               </motion.a>
             </motion.main>
-
-            <motion.footer className="mt-12 w-full md:absolute md:bottom-12" variants={itemVariants}>
-              <ScrollVelocity velocity={2} className="text-xs">
-                {[
-                  <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
-                  <span key="item2">Corporate Events • Weddings • Private Celebrations</span>,
-                  <span key="item3">Fresh Ingredients • Authentic Recipes • Professional Service</span>,
-                  <span key="item4">+44 7196 103 2314 • mariam@mywaycatering.com</span>,
-                ]}
-              </ScrollVelocity>
-            </motion.footer>
           </div>
+
+          {/* Scrolling text pushed to BOTTOM with margin-top: auto */}
+          <motion.footer className="w-full mt-auto" variants={itemVariants}>
+            <ScrollVelocity velocity={2} className="text-xs">
+              {[
+                <span key="item1">Nigerian • Caribbean • European Cuisine</span>,
+                <span key="item2">Corporate Events • Weddings • Private Celebrations</span>,
+                <span key="item3">Fresh Ingredients • Authentic Recipes • Professional Service</span>,
+                <span key="item4">+44 7196 103 2314 • mariam@mywaycatering.com</span>,
+              ]}
+            </ScrollVelocity>
+          </motion.footer>
         </div>
 
         {/* Right Side: Image Slider */}
-        <div className="relative w-full min-h-[300px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[600px] lg:w-2/5 lg:h-[700px] overflow-hidden">
+        <div className="relative w-full min-h-[300px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[700px] lg:w-2/5 overflow-hidden">
           {backgroundImages.map((image, index) => (
             <motion.div
               key={image}
@@ -136,7 +137,7 @@ function Test4() {
 
       <div className="py-20 text-center">
         <h2 className="text-3xl font-bold mb-4">Test Page 4</h2>
-        <p className="text-lg text-muted-foreground">Approach: Both logo and content absolutely positioned independently</p>
+        <p className="text-lg text-muted-foreground">Flexbox column with margin-top: auto on scrolling text</p>
       </div>
 
       <Footer />
