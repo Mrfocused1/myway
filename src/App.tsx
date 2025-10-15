@@ -323,7 +323,7 @@ function App() {
                     </p>
                     <button
                       onClick={() => toggleCard('caribbean')}
-                      className="inline-flex items-center gap-2 bg-earthy-cream text-white px-6 py-3 rounded-lg font-semibold hover:bg-earthy-cream-dark transition-colors"
+                      className="inline-flex items-center gap-2 bg-earthy-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-earthy-green-dark transition-colors"
                     >
                       Read More
                       <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -358,7 +358,7 @@ function App() {
                     </button>
                     <a
                       href="/menu"
-                      className="inline-flex items-center gap-2 bg-earthy-cream text-white px-6 py-3 rounded-lg font-semibold hover:bg-earthy-cream-dark transition-colors"
+                      className="inline-flex items-center gap-2 bg-earthy-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-earthy-green-dark transition-colors"
                     >
                       View Menu
                       <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
