@@ -10,7 +10,7 @@ export function Footer() {
             <img
               src="/myway-logo-white.png"
               alt="MYWAY CATERING Logo"
-              className="h-20 mb-4 object-contain"
+              className="h-40 mb-4 object-contain"
             />
             <p className="text-white/70 mb-4 leading-relaxed">
               Where exceptional culinary experiences meet personalised service. We take pride in crafting delicious meals tailored to your unique events.

@@ -23,7 +23,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         {/* Desktop Menu */}
         <div className="hidden md:flex justify-center items-center gap-8 relative">
           {/* Logo */}
-          <Link to="/" className="absolute left-0 flex-shrink-0">
+          <Link to="/" className="absolute left-0 top-4 flex-shrink-0">
             <img
               src="/myway-logo.svg"
               alt="MYWAY CATERING Logo"
