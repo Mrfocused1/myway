@@ -71,7 +71,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         variants={containerVariants}
       >
         {/* Mobile: Flexbox with justify-between (Position A) | Desktop: Grid with 3 rows */}
-        <div className="flex flex-col justify-between p-8 md:grid md:grid-cols-1 md:min-h-0 md:h-[700px] md:w-1/2 md:grid-rows-[auto_1fr_auto] md:p-0 lg:w-3/5">
+        <div className="flex flex-col justify-between md:grid md:grid-cols-1 md:min-h-0 md:h-[700px] md:w-1/2 md:grid-rows-[auto_1fr_auto] md:p-0 lg:w-3/5">
             {/* Mobile: Logo & Content together | Desktop: Logo in Row 1 */}
             <div className="md:contents">
                 {/* Logo - Hidden on mobile, shown on desktop */}
@@ -81,8 +81,8 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                     </motion.div>
                 )}
 
-                {/* Content - Desktop: Row 2, centered vertically */}
-                <div className="md:flex md:items-center md:px-12 lg:px-16">
+                {/* Content - Mobile: has padding | Desktop: Row 2, centered vertically */}
+                <div className="px-8 md:px-0 md:flex md:items-center md:px-12 lg:px-16">
                     <motion.main variants={containerVariants}>
                         <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
                             {title}
@@ -98,16 +98,16 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                 </div>
             </div>
 
-            {/* Scrolling text - Mobile: pushed to bottom by justify-between | Desktop: Row 3 */}
+            {/* Scrolling text - Mobile: has padding, pushed to bottom | Desktop: Row 3 */}
             {scrollingText && (
-                <motion.footer className="mt-12 w-full md:mt-0 md:pb-8 md:px-12 lg:px-16" variants={itemVariants}>
+                <motion.footer className="mt-12 w-full px-8 md:px-0 md:mt-0 md:pb-8 md:px-12 lg:px-16" variants={itemVariants}>
                     {scrollingText}
                 </motion.footer>
             )}
         </div>
 
-        {/* Right Side: Image Slider with Clip Path Animation */}
-        <div className="relative w-full min-h-[300px] -mx-8 md:mx-0 md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[700px] lg:w-2/5 overflow-hidden">
+        {/* Right Side: Image Slider - Mobile: full width no negative margin | Desktop: absolute positioned */}
+        <div className="relative w-full min-h-[300px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-[700px] lg:w-2/5 overflow-hidden">
           {backgroundImages.map((image, index) => (
             <motion.div
               key={image}
