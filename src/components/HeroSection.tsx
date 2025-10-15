@@ -74,7 +74,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 md:pt-[63px] lg:w-3/5 lg:p-16 lg:pt-[79px]">
             {/* Top Section: Logo & Main Content */}
             <div>
-                <motion.header className="mb-4" variants={itemVariants}>
+                <motion.header className="mb-4 md:-mt-[63px] lg:-mt-[79px]" variants={itemVariants}>
                     {logo && (
                         <div>
                             <img src={logo.url} alt={logo.alt} className="h-40 w-auto max-w-[600px] object-contain pb-[15px] brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(28%) sepia(89%) saturate(1453%) hue-rotate(130deg) brightness(95%) contrast(101%)' }} />
@@ -82,7 +82,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                     )}
                 </motion.header>
 
-                <motion.main variants={containerVariants} className="md:-mt-[98px]">
+                <motion.main variants={containerVariants} className="md:-mt-[240px]">
                     <motion.h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl" variants={itemVariants}>
                         {title}
                     </motion.h1>
