@@ -3,9 +3,12 @@ import { useAuth } from '../contexts/AuthContext'
 import { supabase, MenuItemDB } from '../lib/supabase'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
+import { CateringPackagesManager } from '../components/admin/CateringPackagesManager'
 
 const categories = ["Starters", "Soups & Stews", "Rice Dishes", "Proteins", "Swallow & Sides", "Specials"]
 const cuisines = ["Nigerian", "Caribbean", "European"]
+
+type Tab = 'menu' | 'packages'
 
 interface MenuItemForm {
   name: string
@@ -19,6 +22,7 @@ interface MenuItemForm {
 export function AdminPage() {
   const { user, signOut } = useAuth()
   const navigate = useNavigate()
+  const [activeTab, setActiveTab] = useState<Tab>('menu')
   const [menuItems, setMenuItems] = useState<MenuItemDB[]>([])
   const [loading, setLoading] = useState(true)
   const [showModal, setShowModal] = useState(false)
@@ -167,7 +171,9 @@ export function AdminPage() {
       <header className="bg-slate-800 text-white py-6 px-8 shadow-lg">
         <div className="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold">Menu Management</h1>
+            <h1 className="text-2xl md:text-3xl font-bold">
+              {activeTab === 'menu' ? 'Menu Management' : 'Catering Packages'}
+            </h1>
             <p className="text-white/80 mt-1 text-sm md:text-base">Logged in as {user?.email}</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
@@ -187,7 +193,39 @@ export function AdminPage() {
         </div>
       </header>
 
+      {/* Tabs */}
+      <div className="bg-white border-b border-border">
+        <div className="container mx-auto max-w-7xl px-8">
+          <div className="flex gap-4">
+            <button
+              onClick={() => setActiveTab('menu')}
+              className={`px-6 py-4 font-semibold transition-colors border-b-2 ${
+                activeTab === 'menu'
+                  ? 'text-emerald-700 border-emerald-700'
+                  : 'text-muted-foreground border-transparent hover:text-foreground'
+              }`}
+            >
+              Menu Items
+            </button>
+            <button
+              onClick={() => setActiveTab('packages')}
+              className={`px-6 py-4 font-semibold transition-colors border-b-2 ${
+                activeTab === 'packages'
+                  ? 'text-emerald-700 border-emerald-700'
+                  : 'text-muted-foreground border-transparent hover:text-foreground'
+              }`}
+            >
+              Catering Packages
+            </button>
+          </div>
+        </div>
+      </div>
+
       <div className="container mx-auto max-w-7xl px-8 py-8">
+        {activeTab === 'packages' ? (
+          <CateringPackagesManager />
+        ) : (
+          <>
         {/* Actions Bar */}
         <div className="mb-8 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
           <button
@@ -426,6 +464,8 @@ export function AdminPage() {
           </div>
         )}
       </AnimatePresence>
+        )}
+      </div>
     </div>
   )
 }

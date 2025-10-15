@@ -21,3 +21,15 @@ export interface MenuItemDB {
   created_at: string
   updated_at: string
 }
+
+export interface CateringPackageDB {
+  id: string
+  name: string
+  price: string
+  description: string
+  includes: string[]
+  featured: boolean
+  display_order: number
+  created_at: string
+  updated_at: string
+}

@@ -1,9 +1,12 @@
-// import React from 'react';
+import { useState, useEffect } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { motion } from 'framer-motion';
+import { supabase, CateringPackageDB } from '../lib/supabase';
 
 export function CateringServicesPage() {
+  const [packages, setPackages] = useState<CateringPackageDB[]>([]);
+  const [loading, setLoading] = useState(true);
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Our Menus", href: "/menu" },
@@ -67,48 +70,22 @@ export function CateringServicesPage() {
     }
   ];
 
-  const packages = [
-    {
-      name: "Essential",
-      price: "Starting at $25/person",
-      description: "Perfect for smaller gatherings and casual events",
-      includes: [
-        "Choice of 2 appetizers",
-        "1 main course option",
-        "2 side dishes",
-        "Basic setup and cleanup",
-        "Disposable serving ware"
-      ]
-    },
-    {
-      name: "Premium",
-      price: "Starting at $45/person",
-      description: "Ideal for corporate events and celebrations",
-      includes: [
-        "Choice of 3 appetizers",
-        "2 main course options",
-        "3 side dishes",
-        "Professional serving staff",
-        "China and glassware",
-        "Full setup and cleanup"
-      ],
-      featured: true
-    },
-    {
-      name: "Luxury",
-      price: "Starting at $75/person",
-      description: "The ultimate catering experience for prestigious events",
-      includes: [
-        "Premium appetizer selection",
-        "3 gourmet main courses",
-        "4 signature sides",
-        "Dedicated event coordinator",
-        "Premium tableware and linens",
-        "Chef on-site",
-        "Full-service experience"
-      ]
-    }
-  ];
+  useEffect(() => {
+    const fetchPackages = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('catering_packages')
+        .select('*')
+        .order('display_order');
+
+      if (!error && data) {
+        setPackages(data);
+      }
+      setLoading(false);
+    };
+
+    fetchPackages();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -218,8 +195,14 @@ export function CateringServicesPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
+          {loading ? (
+            <div className="text-center py-12">
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-700"></div>
+              <p className="mt-4 text-muted-foreground">Loading packages...</p>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-3 gap-8">
+              {packages.map((pkg, index) => (
               <motion.div
                 key={pkg.name}
                 className={`relative p-8 rounded-2xl border-2 ${
@@ -266,8 +249,9 @@ export function CateringServicesPage() {
                   Get Started
                 </a>
               </motion.div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           <motion.div
             className="text-center mt-12"
