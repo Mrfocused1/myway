@@ -49,9 +49,6 @@ export function Footer() {
             <h4 className="text-lg font-bold mb-4 uppercase">Contact Us</h4>
             <ul className="space-y-3 text-white/70">
               <li>
-                <span>123 Catering Street<br />City, State 12345</span>
-              </li>
-              <li>
                 <a href="tel:+15555551234" className="hover:text-white transition-colors">
                   +1 (555) 555-1234
                 </a>
