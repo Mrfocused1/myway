@@ -34,10 +34,6 @@ function App() {
         ]}
       />
       <HeroSection
-        logo={{
-          url: "/myway-logo.svg",
-          alt: "MYWAY CATERING Logo",
-        }}
         title={
           <>
             Myway Catering

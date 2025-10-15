@@ -21,7 +21,17 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         {...props}
       >
         {/* Desktop Menu */}
-        <div className="hidden md:flex justify-center">
+        <div className="hidden md:flex justify-between items-center">
+          {/* Logo */}
+          <Link to="/" className="flex-shrink-0">
+            <img
+              src="/myway-logo.svg"
+              alt="MYWAY CATERING Logo"
+              className="h-20 w-auto object-contain"
+            />
+          </Link>
+
+          {/* Navigation Items */}
           <div className="rounded-full bg-emerald-700 backdrop-blur-sm px-8 py-3 shadow-lg border border-emerald-600">
             <ul className="flex items-center gap-8">
               {items.map((item) => (
@@ -47,15 +57,25 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
           </div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex justify-end">
+        {/* Mobile Menu */}
+        <div className="md:hidden flex justify-between items-center">
+          {/* Mobile Logo */}
+          <Link to="/" className="flex-shrink-0">
+            <img
+              src="/myway-logo.svg"
+              alt="MYWAY CATERING Logo"
+              className="h-12 w-auto object-contain"
+            />
+          </Link>
+
+          {/* Mobile Menu Button */}
           <button
-            className="rounded-full bg-background/80 backdrop-blur-sm p-3 shadow-lg border border-border/50"
+            className="rounded-full bg-emerald-700/80 backdrop-blur-sm p-3 shadow-lg border border-emerald-600/50"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
           <svg
-            className="h-6 w-6 text-foreground"
+            className="h-6 w-6 text-white"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
