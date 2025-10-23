@@ -149,7 +149,7 @@ export function PrivacyPolicyPage() {
                 <li><strong>Withdraw Consent:</strong> Withdraw your consent to processing where we rely on consent</li>
               </ul>
               <p className="text-foreground/80 leading-relaxed">
-                To exercise any of these rights, please contact us at mariam@mywaycatering.com or +44 7196 103 2314.
+                To exercise any of these rights, please contact us at mariam@mywaycatering.com or +44 7961 032 314.
               </p>
             </div>
 
@@ -211,7 +211,7 @@ export function PrivacyPolicyPage() {
               <div className="bg-slate-100 p-6 rounded-lg">
                 <p className="text-foreground font-semibold mb-2">MYWAY Catering</p>
                 <p className="text-foreground/80">Email: <a href="mailto:mariam@mywaycatering.com" className="text-earthy-green hover:text-earthy-green-dark">mariam@mywaycatering.com</a></p>
-                <p className="text-foreground/80">Phone: <a href="tel:+4471961032314" className="text-earthy-green hover:text-earthy-green-dark">+44 7196 103 2314</a></p>
+                <p className="text-foreground/80">Phone: <a href="tel:+447961032314" className="text-earthy-green hover:text-earthy-green-dark">+44 7961 032 314</a></p>
               </div>
             </div>
 

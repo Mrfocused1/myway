@@ -46,8 +46,8 @@ export function Footer() {
             <h4 className="text-lg font-bold mb-4 uppercase">Contact Us</h4>
             <ul className="space-y-3 text-white/70">
               <li>
-                <a href="tel:+4471961032314" className="hover:text-white transition-colors">
-                  +44 7196 103 2314
+                <a href="tel:+447961032314" className="hover:text-white transition-colors">
+                  +44 7961 032 314
                 </a>
               </li>
               <li>

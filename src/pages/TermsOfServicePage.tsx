@@ -291,7 +291,7 @@ export function TermsOfServicePage() {
               <div className="bg-slate-100 p-6 rounded-lg">
                 <p className="text-foreground font-semibold mb-2">MYWAY Catering</p>
                 <p className="text-foreground/80">Email: <a href="mailto:mariam@mywaycatering.com" className="text-earthy-green hover:text-earthy-green-dark">mariam@mywaycatering.com</a></p>
-                <p className="text-foreground/80">Phone: <a href="tel:+4471961032314" className="text-earthy-green hover:text-earthy-green-dark">+44 7196 103 2314</a></p>
+                <p className="text-foreground/80">Phone: <a href="tel:+447961032314" className="text-earthy-green hover:text-earthy-green-dark">+44 7961 032 314</a></p>
               </div>
             </div>
 

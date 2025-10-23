@@ -396,7 +396,7 @@ ${formData.name}
               View Our Menu
             </a>
             <a
-              href="tel:+4471961032314"
+              href="tel:+447961032314"
               className="inline-block bg-earthy-green text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-earthy-green-dark transition-all hover:scale-105"
             >
               Call Us Now
