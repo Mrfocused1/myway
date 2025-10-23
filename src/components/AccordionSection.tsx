@@ -15,7 +15,7 @@ const accordionItems = [
   {
     id: 3,
     title: 'European Cuisine',
-    imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1974&auto=format&fit=crop',
+    imageUrl: 'https://github.com/Mrfocused1/byway-training/blob/main/marimm.jpg?raw=true',
   },
 ];
 
