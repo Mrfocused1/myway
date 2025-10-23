@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import { SEO } from '../components/SEO';
 import { motion } from 'framer-motion';
 import { supabase, CateringPackageDB } from '../lib/supabase';
 
@@ -89,6 +90,12 @@ export function CateringServicesPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Catering Services - MYWAY Catering | Corporate, Wedding & Private Event Catering"
+        description="Professional catering services for all occasions. MYWAY Catering offers custom packages for corporate events, weddings, and private celebrations featuring Nigerian, Caribbean, and European cuisine."
+        keywords="catering services, corporate catering, wedding catering, event catering, party catering, Nigerian catering services, Caribbean catering services, private event catering, business catering, celebration catering"
+        canonical="https://www.mywaycatering.com/services"
+      />
       <Navigation items={navItems} useWhiteLogo />
 
       {/* Hero Section */}

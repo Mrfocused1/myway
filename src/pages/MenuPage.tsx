@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import { SEO } from '../components/SEO';
 import { supabase, MenuItemDB } from '../lib/supabase';
 
 const categories = ["All", "Starters", "Soups & Stews", "Rice Dishes", "Proteins", "Swallow & Sides", "Specials"];
@@ -107,6 +108,12 @@ export function MenuPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Our Menus - MYWAY Catering | Nigerian, Caribbean & European Cuisine"
+        description="Browse our extensive menu featuring authentic Nigerian, Caribbean, and European dishes. From Jollof rice to jerk chicken to traditional roasts. Perfect for any event or celebration."
+        keywords="MYWAY Catering menu, Nigerian food menu, Caribbean food menu, European catering menu, Jollof rice, jerk chicken, African cuisine, wedding menu, corporate catering menu"
+        canonical="https://www.mywaycatering.com/menu"
+      />
       <Navigation items={navItems} useWhiteLogo />
 
       {/* Hero Section */}

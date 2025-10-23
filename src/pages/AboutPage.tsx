@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import { SEO } from '../components/SEO';
 
 export function AboutPage() {
   const [formData, setFormData] = useState({
@@ -69,6 +70,12 @@ ${formData.name}
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="About Us - MYWAY Catering | Professional Catering Services"
+        description="Learn about MYWAY Catering's commitment to excellence. We specialize in authentic Nigerian, Caribbean, and European cuisine for corporate events, weddings, and celebrations. Contact us for a quote."
+        keywords="about MYWAY Catering, professional catering company, Nigerian caterers, Caribbean caterers, event catering company, wedding caterers UK, catering company near me"
+        canonical="https://www.mywaycatering.com/about"
+      />
       <Navigation items={navItems} useWhiteLogo />
 
       {/* Hero Section */}

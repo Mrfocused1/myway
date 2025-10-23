@@ -6,6 +6,8 @@ import { AccordionSection } from './components/AccordionSection'
 import { HowItWorks } from './components/HowItWorks'
 import { InfiniteMovingCards } from './components/ui/infinite-moving-cards'
 import { Footer } from './components/Footer'
+import { StructuredData } from './components/StructuredData'
+import { SEO } from './components/SEO'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
@@ -24,6 +26,13 @@ function App() {
   };
   return (
     <div className="min-h-screen">
+      <StructuredData />
+      <SEO
+        title="MYWAY Catering - Authentic Nigerian, Caribbean & European Cuisine | Professional Catering Services UK"
+        description="MYWAY Catering offers exceptional catering services featuring authentic Nigerian, Caribbean, and European cuisine. Perfect for corporate events, weddings, and private celebrations across the UK. Call +44 7961 032 314 for a quote."
+        keywords="MYWAY Catering, myway catering, catering services, Nigerian catering, Caribbean catering, European catering, wedding catering, corporate catering, event catering UK, African cuisine catering, Jollof rice catering, authentic Nigerian food, Caribbean jerk chicken, professional caterers, catering near me, event food services, party catering, private celebration catering"
+        canonical="https://www.mywaycatering.com/"
+      />
       <Navigation
         items={[
           { label: "Home", href: "/" },
