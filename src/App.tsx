@@ -51,6 +51,7 @@ function App() {
           href: "/about#contact",
         }}
         backgroundImages={[
+          "https://github.com/Mrfocused1/byway-training/blob/main/mariamm.jpg?raw=true",
           "https://github.com/Mrfocused1/YouTube-directory/blob/main/hero%20image%201.jpg?raw=true",
           "https://github.com/Mrfocused1/YouTube-directory/blob/main/patties.jpg?raw=true",
           "https://github.com/Mrfocused1/YouTube-directory/blob/main/italian%20food-2.jpg?raw=true"
