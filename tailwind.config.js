@@ -27,20 +27,20 @@ export default {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
-        // Earthy color palette
+        // Updated color palette
         'earthy-green': {
-          DEFAULT: '#6B8E23',    // Olive drab
-          dark: '#4A5D23',       // Dark olive
-          light: '#8BA846',      // Light olive
+          DEFAULT: '#000000',    // Black
+          dark: '#000000',       // Black
+          light: '#333333',      // Dark gray
         },
         'earthy-cream': {
           DEFAULT: '#FAF6F1',    // Light cream
           dark: '#F5EFE7',       // Darker cream
         },
         'earthy-brown': {
-          DEFAULT: '#5D4E37',    // Dark earthy brown
-          dark: '#3E2F23',       // Very dark brown
-          light: '#8B7355',      // Light brown
+          DEFAULT: '#1e3a8a',    // Navy blue
+          dark: '#1e40af',       // Bright navy
+          light: '#3b82f6',      // Lighter blue
         },
       },
       maxWidth: {

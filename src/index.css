@@ -5,30 +5,30 @@
 @layer base {
   :root {
     --background: 30 43% 97%;     /* Cream background #FAF6F1 */
-    --foreground: 30 23% 25%;     /* Dark brown #3E3428 */
-    --primary: 80 60% 35%;        /* Earthy olive green #6B8E23 */
+    --foreground: 221 83% 33%;    /* Navy blue #1e3a8a */
+    --primary: 0 0% 0%;           /* Black #000000 */
     --primary-foreground: 30 43% 97%;
     --secondary: 30 43% 93%;      /* Darker cream #F5EFE7 */
-    --secondary-foreground: 30 23% 25%;
+    --secondary-foreground: 221 83% 33%;
     --muted: 30 20% 88%;
     --muted-foreground: 30 15% 45%;
     --border: 30 25% 85%;
     --input: 30 25% 85%;
-    --ring: 80 60% 35%;
+    --ring: 0 0% 0%;
   }
 
   .dark {
-    --background: 30 23% 15%;
+    --background: 221 83% 15%;
     --foreground: 30 43% 97%;
-    --primary: 80 50% 45%;
-    --primary-foreground: 30 23% 15%;
-    --secondary: 30 20% 22%;
+    --primary: 0 0% 20%;
+    --primary-foreground: 30 43% 97%;
+    --secondary: 221 40% 22%;
     --secondary-foreground: 30 43% 97%;
-    --muted: 30 20% 25%;
+    --muted: 221 20% 25%;
     --muted-foreground: 30 20% 65%;
-    --border: 30 20% 25%;
-    --input: 30 20% 25%;
-    --ring: 80 50% 45%;
+    --border: 221 20% 25%;
+    --input: 221 20% 25%;
+    --ring: 0 0% 20%;
   }
 }
 
